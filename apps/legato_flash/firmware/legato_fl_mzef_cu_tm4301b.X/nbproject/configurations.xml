@@ -719,9 +719,36 @@
     <logicalFolder name="ExternalFiles"
                    displayName="Important Files"
                    projectFiles="false">
+      <logicalFolder name="f1"
+                     displayName="lcc_rgb565_mxt_mzef_cu.mhc"
+                     projectFiles="true">
+        <itemPath>../src/config/lcc_rgb565_mxt_mzef_cu/lcc_rgb565_mxt_mzef_cu.mhc/drv_i2c.yml</itemPath>
+        <itemPath>../src/config/lcc_rgb565_mxt_mzef_cu/lcc_rgb565_mxt_mzef_cu.mhc/gfx_hal_le.yml</itemPath>
+        <itemPath>../src/config/lcc_rgb565_mxt_mzef_cu/lcc_rgb565_mxt_mzef_cu.mhc/sys_fs.yml</itemPath>
+        <itemPath>../src/config/lcc_rgb565_mxt_mzef_cu/lcc_rgb565_mxt_mzef_cu.mhc/GraphSettings.yml</itemPath>
+        <itemPath>../src/config/lcc_rgb565_mxt_mzef_cu/lcc_rgb565_mxt_mzef_cu.mhc/settings.yml</itemPath>
+        <itemPath>../src/config/lcc_rgb565_mxt_mzef_cu/lcc_rgb565_mxt_mzef_cu.mhc/core.yml</itemPath>
+        <itemPath>../src/config/lcc_rgb565_mxt_mzef_cu/lcc_rgb565_mxt_mzef_cu.mhc/i2c2.yml</itemPath>
+        <itemPath>../src/config/lcc_rgb565_mxt_mzef_cu/lcc_rgb565_mxt_mzef_cu.mhc/core_timer.yml</itemPath>
+        <itemPath>../src/config/lcc_rgb565_mxt_mzef_cu/lcc_rgb565_mxt_mzef_cu.mhc/BSP_PIC32MZ_EF_Curiosity_2.0.yml</itemPath>
+        <itemPath>../src/config/lcc_rgb565_mxt_mzef_cu/lcc_rgb565_mxt_mzef_cu.mhc/legato_gfx_pda_tm4301b.yml</itemPath>
+        <itemPath>../src/config/lcc_rgb565_mxt_mzef_cu/lcc_rgb565_mxt_mzef_cu.mhc/sys_input.yml</itemPath>
+        <itemPath>../src/config/lcc_rgb565_mxt_mzef_cu/lcc_rgb565_mxt_mzef_cu.mhc/le_gfx_driver_lcc.yml</itemPath>
+        <itemPath>../src/config/lcc_rgb565_mxt_mzef_cu/lcc_rgb565_mxt_mzef_cu.mhc/sqi1.yml</itemPath>
+        <itemPath>../src/config/lcc_rgb565_mxt_mzef_cu/lcc_rgb565_mxt_mzef_cu.mhc/gfx_disp_pdatm4301b_480x272.yml</itemPath>
+        <itemPath>../src/config/lcc_rgb565_mxt_mzef_cu/lcc_rgb565_mxt_mzef_cu.mhc/project.yml</itemPath>
+        <itemPath>../src/config/lcc_rgb565_mxt_mzef_cu/lcc_rgb565_mxt_mzef_cu.mhc/usb_host.yml</itemPath>
+        <itemPath>../src/config/lcc_rgb565_mxt_mzef_cu/lcc_rgb565_mxt_mzef_cu.mhc/gfx_legato.yml</itemPath>
+        <itemPath>../src/config/lcc_rgb565_mxt_mzef_cu/lcc_rgb565_mxt_mzef_cu.mhc/gfx_maxtouch_controller.yml</itemPath>
+        <itemPath>../src/config/lcc_rgb565_mxt_mzef_cu/lcc_rgb565_mxt_mzef_cu.mhc/sys_time.yml</itemPath>
+        <itemPath>../src/config/lcc_rgb565_mxt_mzef_cu/lcc_rgb565_mxt_mzef_cu.mhc/ebi.yml</itemPath>
+        <itemPath>../src/config/lcc_rgb565_mxt_mzef_cu/lcc_rgb565_mxt_mzef_cu.mhc/drv_sst26.yml</itemPath>
+        <itemPath>../src/config/lcc_rgb565_mxt_mzef_cu/lcc_rgb565_mxt_mzef_cu.mhc/dfp.yml</itemPath>
+        <itemPath>../src/config/lcc_rgb565_mxt_mzef_cu/lcc_rgb565_mxt_mzef_cu.mhc/usb_host_msd.yml</itemPath>
+        <itemPath>../src/config/lcc_rgb565_mxt_mzef_cu/lcc_rgb565_mxt_mzef_cu.mhc/HarmonyCore.yml</itemPath>
+        <itemPath>../src/config/lcc_rgb565_mxt_mzef_cu/lcc_rgb565_mxt_mzef_cu.mhc/drv_usbhs_v1.yml</itemPath>
+      </logicalFolder>
       <itemPath>Makefile</itemPath>
-      <itemPath>../src/config/lcc_rgb565_mxt_mzef_cu/harmony.prj</itemPath>
-      <itemPath>../src/config/lcc_rgb565_mxt_mzef_cu/lcc_rgb565_mxt_mzef_cu.xml</itemPath>
       <itemPath>../src/config/lcc_rgb565_mxt_mzef_cu/harmony-manifest-success.yml</itemPath>
     </logicalFolder>
   </logicalFolder>
@@ -738,7 +765,7 @@
         <targetPluginBoard></targetPluginBoard>
         <platformTool>pkob4hybrid</platformTool>
         <languageToolchain>XC32</languageToolchain>
-        <languageToolchainVersion>2.41</languageToolchainVersion>
+        <languageToolchainVersion>2.50</languageToolchainVersion>
         <platform>2</platform>
       </toolsSet>
       <packs>
@@ -763,6 +790,7 @@
       </compileType>
       <makeCustomizationType>
         <makeCustomizationPreStepEnabled>false</makeCustomizationPreStepEnabled>
+        <makeUseCleanTarget>false</makeUseCleanTarget>
         <makeCustomizationPreStep></makeCustomizationPreStep>
         <makeCustomizationPostStepEnabled>false</makeCustomizationPostStepEnabled>
         <makeCustomizationPostStep></makeCustomizationPostStep>

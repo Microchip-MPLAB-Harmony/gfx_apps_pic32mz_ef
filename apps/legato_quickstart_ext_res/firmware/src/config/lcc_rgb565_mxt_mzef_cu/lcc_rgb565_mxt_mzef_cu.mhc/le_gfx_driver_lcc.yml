@@ -1,0 +1,142 @@
+format_version: v1.0
+type: UniqueComponent
+attributes: {id: le_gfx_driver_lcc}
+children:
+- type: Symbols
+  children:
+  - type: Integer
+    attributes: {id: DMAChannel}
+    children:
+    - type: Values
+      children:
+      - type: Dynamic
+        attributes: {id: le_gfx_driver_lcc, value: '0'}
+  - type: Boolean
+    attributes: {id: DMAChannelSelected}
+    children:
+    - type: Values
+      children:
+      - type: Dynamic
+        attributes: {id: le_gfx_driver_lcc, value: 'true'}
+  - type: Integer
+    attributes: {id: DisplayHeight}
+    children:
+    - type: Values
+      children:
+      - type: Dynamic
+        attributes: {id: le_gfx_driver_lcc, value: '272'}
+  - type: Integer
+    attributes: {id: DisplayHorzBackPorch}
+    children:
+    - type: Values
+      children:
+      - type: Dynamic
+        attributes: {id: le_gfx_driver_lcc, value: '2'}
+  - type: Integer
+    attributes: {id: DisplayHorzFrontPorch}
+    children:
+    - type: Values
+      children:
+      - type: Dynamic
+        attributes: {id: le_gfx_driver_lcc, value: '2'}
+  - type: Integer
+    attributes: {id: DisplayHorzPulseWidth}
+    children:
+    - type: Values
+      children:
+      - type: Dynamic
+        attributes: {id: le_gfx_driver_lcc, value: '41'}
+  - type: Integer
+    attributes: {id: DisplayVertBackPorch}
+    children:
+    - type: Values
+      children:
+      - type: Dynamic
+        attributes: {id: le_gfx_driver_lcc, value: '2'}
+  - type: Integer
+    attributes: {id: DisplayVertFrontPorch}
+    children:
+    - type: Values
+      children:
+      - type: Dynamic
+        attributes: {id: le_gfx_driver_lcc, value: '2'}
+  - type: Integer
+    attributes: {id: DisplayVertPulseWidth}
+    children:
+    - type: Values
+      children:
+      - type: Dynamic
+        attributes: {id: le_gfx_driver_lcc, value: '10'}
+  - type: Integer
+    attributes: {id: DisplayWidth}
+    children:
+    - type: Values
+      children:
+      - type: Dynamic
+        attributes: {id: le_gfx_driver_lcc, value: '480'}
+  - type: Integer
+    attributes: {id: EBIChipSelectIndex}
+    children:
+    - type: Values
+      children:
+      - type: Dynamic
+        attributes: {id: le_gfx_driver_lcc, value: '0'}
+  - type: Integer
+    attributes: {id: OldDMAChannel}
+    children:
+    - type: Values
+      children:
+      - type: Dynamic
+        attributes: {id: le_gfx_driver_lcc, value: '0'}
+  - type: Menu
+    attributes: {id: rtosMenu}
+    children:
+    - type: Attributes
+      children:
+      - type: Boolean
+        attributes: {id: visible}
+        children:
+        - {type: Value, value: 'false'}
+- type: Attachments
+  children:
+  - type: DirectDependency
+    attributes: {id: EBI_CS}
+    children:
+    - type: Attributes
+      children:
+      - type: String
+        attributes: {id: targetComponentID}
+        children:
+        - {type: Value, value: ebi}
+      - type: String
+        attributes: {id: targetAttachmentID}
+        children:
+        - {type: Value, value: ebi_cs0}
+  - type: DirectDependency
+    attributes: {id: Graphics Display}
+    children:
+    - type: Attributes
+      children:
+      - type: String
+        attributes: {id: targetComponentID}
+        children:
+        - {type: Value, value: gfx_disp_pdatm4301b_480x272}
+      - type: String
+        attributes: {id: targetAttachmentID}
+        children:
+        - {type: Value, value: gfx_display}
+  - type: DirectCapability
+    attributes: {id: gfx_driver_lcc}
+    children:
+    - type: Attributes
+      children:
+      - type: String
+        attributes: {id: targetComponentID}
+        children:
+        - {type: Value, value: gfx_legato}
+      - type: String
+        attributes: {id: targetAttachmentID}
+        children:
+        - {type: Value, value: gfx_driver}
+- type: ElementPosition
+  attributes: {x: '409', y: '323', id: le_gfx_driver_lcc}

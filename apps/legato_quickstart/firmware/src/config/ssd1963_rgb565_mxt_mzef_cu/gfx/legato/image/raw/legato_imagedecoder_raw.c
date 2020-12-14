@@ -25,6 +25,9 @@
 
 
 #include "gfx/legato/image/legato_image.h"
+
+#if LE_ENABLE_RAW_DECODER == 1
+
 #include "gfx/legato/image/raw/legato_imagedecoder_raw.h"
 
 #include "gfx/legato/common/legato_math.h"
@@ -250,8 +253,6 @@ static leResult _draw(const leImage* img,
     _state.manager.cleanup = _cleanup;
 #endif
 
-    _state.mode = LE_RAW_MODE_DRAW;
-
     _state.source = img;
     _state.sourceRect = sourceClipRect;
 
@@ -289,6 +290,8 @@ static leResult _draw(const leImage* img,
     {
         return LE_FAILURE;
     }
+
+    _state.mode = LE_RAW_MODE_DRAW;
 
     return LE_SUCCESS;
 }
@@ -1226,3 +1229,5 @@ void _leRawImageDecoder_InjectStage(leRawDecodeState* state,
 
     state->stages[idx] = stage;
 }
+
+#endif /* LE_ENABLE_RAW_DECODER */

@@ -1,0 +1,22 @@
+format_version: v1.0
+type: UniqueComponent
+attributes: {id: legato_gfx_pda_tm4301b}
+children:
+- type: Symbols
+  children:
+  - type: Combo
+    attributes: {id: DisplayInterface}
+    children:
+    - type: Values
+      children:
+      - type: User
+        attributes: {value: LCC}
+  - type: Combo
+    attributes: {id: currDisplayInterface}
+    children:
+    - type: Values
+      children:
+      - type: Dynamic
+        attributes: {id: legato_gfx_pda_tm4301b, value: LCC}
+- type: ElementPosition
+  attributes: {x: '78', y: '366', id: legato_gfx_pda_tm4301b}
