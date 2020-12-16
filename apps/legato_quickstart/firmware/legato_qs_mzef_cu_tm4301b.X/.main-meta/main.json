@@ -1,0 +1,79 @@
+{
+	"metaDataVersion": "1.0.0",
+	"category": "com.microchip.ide.project",
+	"content": {
+		"metaDataVersion": "1.1.0",
+		"name": "com.microchip.mcu32.mplabx.project.gfx_apps_pic32mz_ef_legato_quickstart_legato_qs_mzef_cu_tm4301b",
+		"version": "3.9.0",
+		"displayName": "Legato Quickstart Example for PIC32MZ EF Family",
+		"projectName": "legato_quickstart_mzef_cu_wqvga",
+		"shortDescription": "This application demonstrates a basic graphics application using text, images, and touch input.",
+		"ide": {
+			"name": "MPLABX",
+			"semverRange": ">=5.45.0"
+		},
+		"compiler": [
+			{
+				"name": "XC32",
+				"semverRange": ">=2.50.0"
+			}
+		],
+		"dfp": {
+			"name": "PIC32MZ-EF_DFP",
+			"semverRange": "^1.0.20"
+		},
+		"configurator": {
+			"name": "MHC",
+			"semverRange": ">=3.6.2"
+		},
+		"device": {
+			"metaDataVersion": "1.0.0",
+			"category": "com.microchip.portal.contentRef",
+			"content": {
+				"metaDataVersion": "1.0.0",
+				"category": "com.microchip.device",
+				"name": "PIC32MZ2048EFM144",
+				"versionRange": "*"
+			}
+		},
+		"author": "Microchip",
+		"subcategories": [
+			[
+				"Development Kit", "PIC32MZ Embedded Connectivity with FPU (EF) Starter Kit"
+			],
+			[
+				"Harmony", "Middleware", "Graphics", "LEGATO_QUICKSTART"
+			],
+			[
+				"Middleware", "Graphics", "LEGATO_QUICKSTART"
+			]
+		],
+		"peripherals": [
+			"GPU"
+		],
+		"keywords": [
+			"MHC",
+			"Harmony",
+			"Middleware",
+			"Graphics",
+			"PIC32MZ2048EFM144",
+			"PIC32MZ EF Family",
+			"GPU",
+			"External Bus Interface",
+			"External Memory",
+			"Memory",
+			"Graphics"
+		],
+		"additionalData": {
+			"longDescription": {
+				"metaDataVersion": "1.0.0",
+				"category": "com.microchip.portal.fileRef",
+				"content": {
+					"metaDataVersion": "1.0.0",
+					"fileName": "./../../readme.md",
+					"mimeType": "text/markdown"
+				}
+			}
+		}
+	}
+}

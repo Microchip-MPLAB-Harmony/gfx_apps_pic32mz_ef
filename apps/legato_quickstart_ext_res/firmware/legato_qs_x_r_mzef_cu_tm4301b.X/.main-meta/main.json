@@ -1,0 +1,79 @@
+{
+	"metaDataVersion": "1.0.0",
+	"category": "com.microchip.ide.project",
+	"content": {
+		"metaDataVersion": "1.1.0",
+		"name": "com.microchip.mcu32.mplabx.project.gfx_apps_pic32mz_ef_legato_quickstart_ext_res_legato_qs_x_r_mzef_cu_tm4301b",
+		"version": "3.9.0",
+		"displayName": "Legato Quickstart External Resources Example for PIC32MZ EF Family",
+		"projectName": "legato_quickstart_x_r_mzef_cu_wqvga",
+		"shortDescription": "This application demonstrates how to interface with external memory sources.  It connects to the onboard QSPI flash memory to stream images to the graphics library.",
+		"ide": {
+			"name": "MPLABX",
+			"semverRange": ">=5.45.0"
+		},
+		"compiler": [
+			{
+				"name": "XC32",
+				"semverRange": ">=2.50.0"
+			}
+		],
+		"dfp": {
+			"name": "PIC32MZ-EF_DFP",
+			"semverRange": "^1.1.45"
+		},
+		"configurator": {
+			"name": "MHC",
+			"semverRange": ">=3.6.2"
+		},
+		"device": {
+			"metaDataVersion": "1.0.0",
+			"category": "com.microchip.portal.contentRef",
+			"content": {
+				"metaDataVersion": "1.0.0",
+				"category": "com.microchip.device",
+				"name": "PIC32MZ2048EFM144",
+				"versionRange": "*"
+			}
+		},
+		"author": "Microchip",
+		"subcategories": [
+			[
+				"Development Kit", "PIC32MZ Embedded Connectivity with FPU (EF) Starter Kit"
+			],
+			[
+				"Harmony", "Middleware", "Graphics", "LEGATO_QUICKSTART_EXT_RES"
+			],
+			[
+				"Middleware", "Graphics", "LEGATO_QUICKSTART_EXT_RES"
+			]
+		],
+		"peripherals": [
+			"GPU"
+		],
+		"keywords": [
+			"MHC",
+			"Harmony",
+			"Middleware",
+			"Graphics",
+			"PIC32MZ2048EFM144",
+			"PIC32MZ EF Family",
+			"GPU",
+			"External Bus Interface",
+			"External Memory",
+			"Memory",
+			"Graphics"
+		],
+		"additionalData": {
+			"longDescription": {
+				"metaDataVersion": "1.0.0",
+				"category": "com.microchip.portal.fileRef",
+				"content": {
+					"metaDataVersion": "1.0.0",
+					"fileName": "./../../readme.md",
+					"mimeType": "text/markdown"
+				}
+			}
+		}
+	}
+}
