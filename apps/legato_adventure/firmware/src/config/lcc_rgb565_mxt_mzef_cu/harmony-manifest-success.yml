@@ -4,13 +4,13 @@
 
 
 project: legato_adventure
-creation_date: 2020-12-02T12:08:39.799-07:00[America/Phoenix]    # ISO 8601 format: https://www.w3.org/TR/NOTE-datetime
+creation_date: 2020-12-15T17:14:01.262-07:00[America/Phoenix]    # ISO 8601 format: https://www.w3.org/TR/NOTE-datetime
 operating_system: Linux
 mhc_mode: IDE            # [IDE|Standalone|Headless]
-mhc_version: v3.6.2
+mhc_version: v3.6.5
 mplabx_version: v5.45        # if MPLAB X plugin only
 plugin_version: v3.6.2        # if MPLAB X plugin only
-compiler: XC32 (2.41)
+compiler: XC32 (2.50)
 
 modules:
     - {name: "core", version: "v3.8.1"}
