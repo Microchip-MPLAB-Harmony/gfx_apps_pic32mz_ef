@@ -42,14 +42,16 @@
 				"Development Kit", "PIC32MZ Embedded Connectivity with FPU (EF) Starter Kit"
 			],
 			[
-				"Harmony", "Middleware", "Graphics", "LEGATO_ADVENTURE"
+				"Harmony", "Middleware", "Graphics", "Legato", "LEGATO_ADVENTURE"
 			],
 			[
-				"Middleware", "Graphics", "LEGATO_ADVENTURE"
+				"Middleware", "Graphics", "Legato", "LEGATO_ADVENTURE"
 			]
 		],
 		"peripherals": [
-			"GPU"
+			"External Bus Interface",
+            "Touch",
+            "I2C"
 		],
 		"keywords": [
 			"MHC",
@@ -58,11 +60,14 @@
 			"Graphics",
 			"PIC32MZ2048EFM144",
 			"PIC32MZ EF Family",
-			"GPU",
 			"External Bus Interface",
-			"External Memory",
 			"Memory",
-			"Graphics"
+			"Legato",
+            "Touch",
+            "I2C",
+            "Animation",
+            "LCC",
+            "MaxTouch 4.3in"
 		],
 		"additionalData": {
 			"longDescription": {
