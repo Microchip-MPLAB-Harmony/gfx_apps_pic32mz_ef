@@ -61,9 +61,9 @@ void GPIO_Initialize ( void )
 
     /* PORTB Initialization */
     ODCBSET = 0x380; /* Open Drain Enable */
-    LATB = 0x8380; /* Initial Latch Value */
-    TRISBCLR = 0x8384; /* Direction Control */
-    ANSELBCLR = 0xc02c; /* Digital Mode Enable */
+    LATB = 0x83c0; /* Initial Latch Value */
+    TRISBCLR = 0x83c4; /* Direction Control */
+    ANSELBCLR = 0xc06c; /* Digital Mode Enable */
 
     /* PORTC Initialization */
 

@@ -4,7 +4,7 @@
 Defining the Architecture
 -------------------------
 
-![](../../../../docs/images/pic32mz_ef_cu_wqvga_arch.png)
+![](../../../../docs/images/pic32mz_ef_cu_wqvga_qspi_external_arch.png)
 
 In this configuration, the application uses the Low Cost Controllerless (LCC) driver setup. After the initialization phase, the application transitions into the paint phase, where it draws an image to the frame buffer. The graphics driver stores an internal frame buffer and the application uses a gfx_driver API to write pixel data directly to the frame buffer memory address.
 
@@ -56,9 +56,19 @@ Configure the hardware as follows:
 Running the Demonstration
 -------------------------
 
-Once the board is powered on, the application will run and show the following image on the display panel.
+When power-on is successful, the following screen will appear on the display
 
 ![](../../../../docs/images/legato_quickstart_ext_res.png)
+
+Pressing the button will cause the application to load a new image. The image cycles in order from Uncompressed RAW with Direct Blit, Uncompressed RAW, Run-Length Encoded (RLE) RAW, JPEG and PNG.
+
+The MPLAB Harmony Graphics Suite logo is also a button. Pressing the logo will toggle the application between English and Simplified Chinese.
+
+![](../../../../docs/images/legato_quickstart_ext_res_chinese.png)
+
+Note that all images and glyphs are retrieved from external NVM via QSPI. The application is purposely setup in single-buffer configuration to allow visual inspection of the data retrieval speed of the various images and glyphs.
+
+![](../../../../docs/images/legato_quickstart_ext_res_rle.png)
 
 * * * * *
 

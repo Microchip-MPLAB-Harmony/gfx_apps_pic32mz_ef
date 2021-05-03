@@ -89,11 +89,11 @@ SYS_FS_Tasks();
     
     Legato_Tasks();
 
-	/* USB Host Task Routine */ 
-     USB_HOST_Tasks(sysObj.usbHostObject0);
-
     /* USBHS Driver Task Routine */ 
     DRV_USBHS_Tasks(sysObj.drvUSBHSObject);
+
+	/* USB Host Task Routine */ 
+     USB_HOST_Tasks(sysObj.usbHostObject0);
 
 
     SYS_INP_Tasks();

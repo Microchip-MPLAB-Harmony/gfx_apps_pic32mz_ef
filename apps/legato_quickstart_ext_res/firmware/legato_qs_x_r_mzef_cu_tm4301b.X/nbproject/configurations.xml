@@ -267,6 +267,7 @@
           <itemPath>../src/config/lcc_rgb565_mxt_mzef_cu/device.h</itemPath>
           <itemPath>../src/config/lcc_rgb565_mxt_mzef_cu/user.h</itemPath>
           <itemPath>../src/config/lcc_rgb565_mxt_mzef_cu/configuration.h</itemPath>
+          <itemPath>../src/config/lcc_rgb565_mxt_mzef_cu/interrupts.h</itemPath>
         </logicalFolder>
       </logicalFolder>
       <logicalFolder name="f3" displayName="osal" projectFiles="true">
@@ -645,13 +646,13 @@
         <targetDevice>PIC32MZ2048EFM144</targetDevice>
         <targetHeader></targetHeader>
         <targetPluginBoard></targetPluginBoard>
-        <platformTool>pkob4hybrid</platformTool>
+        <platformTool>noID</platformTool>
         <languageToolchain>XC32</languageToolchain>
         <languageToolchainVersion>2.50</languageToolchainVersion>
-        <platform>2</platform>
+        <platform>3</platform>
       </toolsSet>
       <packs>
-        <pack name="PIC32MZ-EF_DFP" vendor="Microchip" version="1.1.45"/>
+        <pack name="PIC32MZ-EF_DFP" vendor="Microchip" version="1.3.58"/>
       </packs>
       <ScriptingSettings>
       </ScriptingSettings>
@@ -689,7 +690,7 @@
         <property key="enable-unroll-loops" value="false"/>
         <property key="exclude-floating-point" value="false"/>
         <property key="extra-include-directories"
-                  value="../src;../src/config/lcc_rgb565_mxt_mzef_cu;../src/packs/PIC32MZ2048EFM144_DFP;"/>
+                  value="../src;../src/config/lcc_rgb565_mxt_mzef_cu;../src/packs/PIC32MZ2048EFM144_DFP"/>
         <property key="generate-16-bit-code" value="false"/>
         <property key="generate-micro-compressed-code" value="false"/>
         <property key="isolate-each-function" value="true"/>
@@ -785,7 +786,7 @@
         <property key="exceptions" value="true"/>
         <property key="exclude-floating-point" value="false"/>
         <property key="extra-include-directories"
-                  value="../src;../src/config/lcc_rgb565_mxt_mzef_cu;../src/packs/PIC32MZ2048EFM144_DFP;"/>
+                  value="../src;../src/config/lcc_rgb565_mxt_mzef_cu;../src/packs/PIC32MZ2048EFM144_DFP"/>
         <property key="generate-16-bit-code" value="false"/>
         <property key="generate-micro-compressed-code" value="false"/>
         <property key="isolate-each-function" value="true"/>
@@ -810,6 +811,7 @@
         <property key="mdtcm" value=""/>
         <property key="mitcm" value=""/>
         <property key="mstacktcm" value="false"/>
+        <property key="omit-pack-options" value="1"/>
         <property key="relaxed-math" value="false"/>
         <property key="save-temps" value="false"/>
         <property key="wpo-lto" value="false"/>
@@ -943,6 +945,8 @@
                   value="Press to browse for a specific firmware version"/>
         <property key="ToolFirmwareOption.UpdateOptions"
                   value="ToolFirmwareOption.UseLatest"/>
+        <property key="ToolFirmwareToolPack"
+                  value="Press to select which tool pack to use"/>
         <property key="UART1" value="true"/>
         <property key="UART2" value="true"/>
         <property key="UART3" value="true"/>
@@ -950,8 +954,10 @@
         <property key="UART5" value="true"/>
         <property key="UART6" value="true"/>
         <property key="communication.interface" value=""/>
+        <property key="communication.interface.jtag" value="2wire"/>
         <property key="communication.speed" value="${communication.speed.default}"/>
         <property key="debugoptions.useswbreakpoints" value="false"/>
+        <property key="freeze.timers" value="false"/>
         <property key="memories.aux" value="false"/>
         <property key="memories.bootflash" value="true"/>
         <property key="memories.configurationmemory" value="true"/>
@@ -965,13 +971,14 @@
                   value="${memories.instruction.ram.ranges}"/>
         <property key="memories.programmemory" value="true"/>
         <property key="memories.programmemory.ranges" value="1d000000-1d1fffff"/>
-        <property key="programmerToGoFilePath"
-                  value="/home/rhone/work/h3/gfx/apps/legato_quickstart_ext_res/firmware/legato_qs_x_r_mzef_cu_tm4301b.X/debug/lcc_rgb565_mxt_mzef_cu/legato_qs_x_r_mzef_cu_tm4301b_ptg"/>
+        <property key="memories.rww" value="true"/>
         <property key="programoptions.donoteraseauxmem" value="false"/>
         <property key="programoptions.eraseb4program" value="true"/>
         <property key="programoptions.pgmentry.voltage" value="low"/>
         <property key="programoptions.pgmspeed" value="Med"/>
         <property key="programoptions.preservedataflash" value="false"/>
+        <property key="programoptions.preservedataflash.ranges"
+                  value="${memories.dataflash.default}"/>
         <property key="programoptions.preserveeeprom" value="false"/>
         <property key="programoptions.preserveeeprom.ranges" value=""/>
         <property key="programoptions.preserveprogram.ranges" value=""/>
@@ -980,6 +987,10 @@
         <property key="programoptions.programcalmem" value="false"/>
         <property key="programoptions.programuserotp" value="false"/>
         <property key="programoptions.testmodeentrymethod" value="VDDFirst"/>
+        <property key="toolpack.updateoptions"
+                  value="toolpack.updateoptions.uselatestoolpack"/>
+        <property key="toolpack.updateoptions.packversion"
+                  value="Press to select which tool pack to use"/>
       </pkob4hybrid>
     </conf>
   </confs>

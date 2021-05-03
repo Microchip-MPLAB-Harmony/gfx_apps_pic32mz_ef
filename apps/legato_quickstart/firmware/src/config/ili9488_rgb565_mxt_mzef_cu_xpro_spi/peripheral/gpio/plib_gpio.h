@@ -80,6 +80,15 @@
 #define GFX_DISP_INTF_PIN_BACKLIGHT_Get()               ((PORTB >> 2) & 0x1)
 #define GFX_DISP_INTF_PIN_BACKLIGHT_PIN                  GPIO_PIN_RB2
 
+/*** Macros for LCD_BACKLIGHT pin ***/
+#define LCD_BACKLIGHT_Set()               (LATBSET = (1<<6))
+#define LCD_BACKLIGHT_Clear()             (LATBCLR = (1<<6))
+#define LCD_BACKLIGHT_Toggle()            (LATBINV= (1<<6))
+#define LCD_BACKLIGHT_OutputEnable()      (TRISBCLR = (1<<6))
+#define LCD_BACKLIGHT_InputEnable()       (TRISBSET = (1<<6))
+#define LCD_BACKLIGHT_Get()               ((PORTB >> 6) & 0x1)
+#define LCD_BACKLIGHT_PIN                  GPIO_PIN_RB6
+
 /*** Macros for GFX_DISP_INTF_PIN_CS pin ***/
 #define GFX_DISP_INTF_PIN_CS_Set()               (LATBSET = (1<<15))
 #define GFX_DISP_INTF_PIN_CS_Clear()             (LATBCLR = (1<<15))

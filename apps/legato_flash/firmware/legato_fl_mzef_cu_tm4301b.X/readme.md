@@ -4,13 +4,13 @@
 Defining the Architecture
 -------------------------
 
-![](../../../../docs/images/pic32mz_ef_cu_wqvga_arch.png)
+![](../../../../docs/images/pic32mz_ef_cu_wqvga_usb_external_arch.png)
 
 In this configuration, the application uses the Low Cost Controllerless (LCC) driver setup. After the initialization phase, the application transitions into the paint phase, where it draws an image to the frame buffer. The graphics driver stores an internal frame buffer and the application uses a gfx_driver API to write pixel data directly to the frame buffer memory address.
 
 The LCC driver continuously refreshes the display panel with data from the frame buffer and the images are shown on the display.
 
-The application will prompt the user to insert a USB or SD card containing the [Intel HEX Format](https://en.wikipedia.org/wiki/Intel_HEX) file to be flashed to the onboard SQI flash device.
+The application will prompt the user to insert a USB MSD containing the [Intel HEX Format](https://en.wikipedia.org/wiki/Intel_HEX) file to be flashed to the onboard SQI flash device.
 
 Once a valid device and file have been identified the application will prompt the user to confirm they wish to flash the file.  A progress bar will then indicate the progress of the flashing process.
 
@@ -20,7 +20,6 @@ Once a valid device and file have been identified the application will prompt th
 -   16-bit RGB Color Mode Frame Buffer in SRAM memory
 -   SQI Memory Interface
 -   USB Interface
--   SD Card Interface
 -   File System Interface
 -   Touch Input
 
@@ -52,10 +51,11 @@ The final setup should be:
 Configure the hardware as follows:
 
 -   Connect the RGB 565 Graphics Adapter to the PIC32MZ EF Curiosity board.
--   Connect the PDA TM4301B display to the RGB 565 Graphics Adapter using the appropriate ribbon cable.
--   Power up the board by connecting the a micro USB cable to the Debug USB connector on the Curiosity board.
+-   Connect the High-Performance 4.3" WQVGA Display Module with maXTouch® Technology to the RGB 565 Graphics Adapter using the appropriate ribbon cable
+-   Power up the board by connecting a micro USB cable to the Debug USB connector or 9v power supply to the barrel plug
 
 ![](../../../../docs/images/pic32mzef_cu_565_wqvga_setup.png)
+
 
 Running the Demonstration
 -------------------------
@@ -63,6 +63,13 @@ Running the Demonstration
 Once the board is powered on, the application will run and show the following image on the display panel.
 
 ![](../../../../docs/images/legato_flash.png)
+
+The application will specifically look for a file in [Intel HEX Format](https://en.wikipedia.org/wiki/Intel_HEX) called '**SQI.hex**'.  Connect a FAT32-formatted USB MSD device to the **Target USB** port.  If the device enumeration succeeded, the display will display a USB button.
+
+![](../../../../docs/images/legato_flash_run1.png)
+
+Press and release the USB button. The application will initiate the data transfer on release of the button. Depending on the size of SQI.hex file (greater than 500 kilobytes), the application may freeze with no visual feedback, upwards of 30 seconds. It will then display a progress bar to indicate the transfer. The transfer completes when the progress bar is filled. The application will then display a button with **OK**.
+
 
 * * * * *
 

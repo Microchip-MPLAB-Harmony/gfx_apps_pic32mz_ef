@@ -446,6 +446,41 @@ children:
       - type: User
         attributes: {value: DIGITAL}
   - type: String
+    attributes: {id: BSP_PIN_37_DIR}
+    children:
+    - type: Values
+      children:
+      - type: User
+        attributes: {value: Out}
+  - type: String
+    attributes: {id: BSP_PIN_37_FUNCTION_NAME}
+    children:
+    - type: Values
+      children:
+      - type: User
+        attributes: {value: LCD_BACKLIGHT}
+  - type: String
+    attributes: {id: BSP_PIN_37_FUNCTION_TYPE}
+    children:
+    - type: Values
+      children:
+      - type: User
+        attributes: {value: GPIO}
+  - type: String
+    attributes: {id: BSP_PIN_37_LAT}
+    children:
+    - type: Values
+      children:
+      - type: User
+        attributes: {value: High}
+  - type: String
+    attributes: {id: BSP_PIN_37_MODE}
+    children:
+    - type: Values
+      children:
+      - type: User
+        attributes: {value: DIGITAL}
+  - type: String
     attributes: {id: BSP_PIN_38_DIR}
     children:
     - type: Values
@@ -1148,6 +1183,20 @@ children:
       - type: Dynamic
         attributes: {id: core, value: I2C1_MASTER_InterruptHandler}
   - type: Boolean
+    attributes: {id: EVIC_154_ENABLE}
+    children:
+    - type: Values
+      children:
+      - type: Dynamic
+        attributes: {id: core, value: 'false'}
+  - type: Boolean
+    attributes: {id: EVIC_154_HANDLER_LOCK}
+    children:
+    - type: Values
+      children:
+      - type: Dynamic
+        attributes: {id: core, value: 'false'}
+  - type: Boolean
     attributes: {id: EVIC_155_ENABLE}
     children:
     - type: Values
@@ -1750,6 +1799,27 @@ children:
       - type: Dynamic
         attributes: {id: core, value: '100000000'}
   - type: Boolean
+    attributes: {id: SPI3_FAULT_INTERRUPT_ENABLE}
+    children:
+    - type: Values
+      children:
+      - type: Dynamic
+        attributes: {id: spi3, value: 'false'}
+  - type: Boolean
+    attributes: {id: SPI3_FAULT_INTERRUPT_ENABLE_UPDATE}
+    children:
+    - type: Values
+      children:
+      - type: Dynamic
+        attributes: {id: core, value: 'true'}
+  - type: Boolean
+    attributes: {id: SPI3_FAULT_INTERRUPT_HANDLER_LOCK}
+    children:
+    - type: Values
+      children:
+      - type: Dynamic
+        attributes: {id: spi3, value: 'false'}
+  - type: Boolean
     attributes: {id: SPI3_RX_INTERRUPT_ENABLE}
     children:
     - type: Values
@@ -1846,14 +1916,14 @@ children:
     - type: Values
       children:
       - type: Dynamic
-        attributes: {id: core, value: '49196'}
+        attributes: {id: core, value: '49260'}
   - type: Hex
     attributes: {id: SYS_PORT_B_LAT}
     children:
     - type: Values
       children:
       - type: Dynamic
-        attributes: {id: core, value: '33664'}
+        attributes: {id: core, value: '33728'}
   - type: Hex
     attributes: {id: SYS_PORT_B_ODC}
     children:
@@ -1867,7 +1937,7 @@ children:
     - type: Values
       children:
       - type: Dynamic
-        attributes: {id: core, value: '33668'}
+        attributes: {id: core, value: '33732'}
   - type: Hex
     attributes: {id: SYS_PORT_J_LAT}
     children:

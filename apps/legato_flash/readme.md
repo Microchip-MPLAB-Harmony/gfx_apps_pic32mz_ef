@@ -8,7 +8,12 @@ nav_order: 5
 
 ![](./../../docs/images/legato_flash.png)
 
-This application demonstrates how to interface with external memory sources.  It can also be used as a general purpose flashing tool for other applications.
+The legato_flash demonstration application serves as an external memory programmer to flash the off-chip non-volatile memory with the resources held on an Memory Storage Device (MSD), such as an USB MSD, which can then be accessed by other applications saving on-chip memory for other programs and resources.
+
+The application [legato_quickstart_external_resources](../legato_quickstart_ext_res/readme.md) in MPLAB Harmony needs to use preloaded images/fonts from QSPI flash external non-volatile memory. This would require legato_flash to flash the required image and font resources onto the QSPI flash. Refer to [legato_quickstart_external_resources](../legato_quickstart_ext_res/readme.md) for usage model information.
+
+![](./../../docs/images/external_resources_flash_reader_diagram.png)
+
 
 |MPLABX Configuration|Board Configuration|
 |:-------------------|:------------------|

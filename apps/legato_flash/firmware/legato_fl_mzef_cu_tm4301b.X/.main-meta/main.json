@@ -4,7 +4,7 @@
 	"content": {
 		"metaDataVersion": "1.1.0",
 		"name": "com.microchip.mcu32.mplabx.project.gfx_apps_pic32mz_ef_legato_flash_legato_fl_mzef_cu_tm4301b",
-		"version": "3.9.0",
+		"version": "3.9.1",
 		"displayName": "Legato Flash Example for PIC32MZ EF Family",
 		"projectName": "legato_flash_mzef_cu_wqvga",
 		"shortDescription": "This application demonstrates how to interface with external memory sources.  It can also be used as a general purpose flashing tool for other applications.",
@@ -39,7 +39,7 @@
 		"author": "Microchip",
 		"subcategories": [
 			[
-				"Development Kit", "PIC32MZ Embedded Connectivity with FPU (EF) Starter Kit"
+				"Development Kit", "Curiosity PIC32MZ EF 2.0 Development Board"
 			],
 			[
 				"Harmony", "Middleware", "Graphics", "Legato", "LEGATO_FLASH"

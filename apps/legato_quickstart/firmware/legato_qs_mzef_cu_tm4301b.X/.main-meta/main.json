@@ -4,7 +4,7 @@
 	"content": {
 		"metaDataVersion": "1.1.0",
 		"name": "com.microchip.mcu32.mplabx.project.gfx_apps_pic32mz_ef_legato_quickstart_legato_qs_mzef_cu_tm4301b",
-		"version": "3.9.0",
+		"version": "3.9.1",
 		"displayName": "Legato Quickstart Example for PIC32MZ EF Family",
 		"projectName": "legato_quickstart_mzef_cu_wqvga",
 		"shortDescription": "This application demonstrates a basic graphics application using text, images, and touch input.",
@@ -39,7 +39,7 @@
 		"author": "Microchip",
 		"subcategories": [
 			[
-				"Development Kit", "PIC32MZ Embedded Connectivity with FPU (EF) Starter Kit"
+				"Development Kit", "Curiosity PIC32MZ EF 2.0 Development Board"
 			],
 			[
 				"Harmony", "Middleware", "Graphics", "Legato", "LEGATO_QUICKSTART"

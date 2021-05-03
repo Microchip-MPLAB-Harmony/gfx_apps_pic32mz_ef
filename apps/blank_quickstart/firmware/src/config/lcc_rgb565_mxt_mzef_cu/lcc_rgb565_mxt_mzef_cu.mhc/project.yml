@@ -13,13 +13,13 @@ files:
   security: NON_SECURE
   type: SOURCE
   userChecksum: 82184E6E6BF21D7C0E91DE0BD7609E90
-- generatedChecksum: D8D0A40190AD196956BCBDF73AD70996
+- generatedChecksum: 1A28D818ACDF547EAFF5113FC4876EA2
   logicalPath: config/lcc_rgb565_mxt_mzef_cu/gfx/driver/lcc
   name: drv_gfx_lcc.c
   physicalPath: gfx/driver/controller/lcc
   security: NON_SECURE
   type: SOURCE
-  userChecksum: D8D0A40190AD196956BCBDF73AD70996
+  userChecksum: 1A28D818ACDF547EAFF5113FC4876EA2
 - generatedChecksum: 13F062B063A4F4AE0B19CE872943995B
   logicalPath: config/lcc_rgb565_mxt_mzef_cu/driver/i2c
   name: drv_i2c.c
@@ -34,13 +34,13 @@ files:
   security: NON_SECURE
   type: SOURCE
   userChecksum: 37780F17759DED907A0F36E28BFB3136
-- generatedChecksum: 4238740A6A08738E296E6139E26E53D8
+- generatedChecksum: D230A6B646D2E78CEAA6AA924E04FCA0
   logicalPath: config/lcc_rgb565_mxt_mzef_cu
   name: exceptions.c
   physicalPath: ''
   security: NON_SECURE
   type: SOURCE
-  userChecksum: 4238740A6A08738E296E6139E26E53D8
+  userChecksum: D230A6B646D2E78CEAA6AA924E04FCA0
 - generatedChecksum: 36FA79243A4ABD63DAAEA023290EDE3B
   logicalPath: config/lcc_rgb565_mxt_mzef_cu/gfx/driver/lcc
   name: gfx_driver.c
@@ -55,13 +55,13 @@ files:
   security: NON_SECURE
   type: SOURCE
   userChecksum: D7D79B69EAE3D788A9B976CC43E50A48
-- generatedChecksum: 94B3816CC7826F2411504399CACE1F47
+- generatedChecksum: 537153B41ADBC16E8185D2E2AD556DF9
   logicalPath: config/lcc_rgb565_mxt_mzef_cu
   name: interrupts.c
   physicalPath: ''
   security: NON_SECURE
   type: SOURCE
-  userChecksum: 94B3816CC7826F2411504399CACE1F47
+  userChecksum: 537153B41ADBC16E8185D2E2AD556DF9
 - generatedChecksum: null
   logicalPath: ''
   name: main.c
@@ -83,13 +83,13 @@ files:
   security: NON_SECURE
   type: SOURCE
   userChecksum: 2FEFEA0D4E94F5A5F3D76BAEC3D602E5
-- generatedChecksum: 70BB883EE82A6D10066C7285FDDFDB8F
+- generatedChecksum: D0AEC2B670AFD7913FEB7FE5DB3AD27F
   logicalPath: config/lcc_rgb565_mxt_mzef_cu/peripheral/dmac
   name: plib_dmac.c
   physicalPath: peripheral/dmac
   security: NON_SECURE
   type: SOURCE
-  userChecksum: 70BB883EE82A6D10066C7285FDDFDB8F
+  userChecksum: D0AEC2B670AFD7913FEB7FE5DB3AD27F
 - generatedChecksum: B96764B4811CBC18DB660CC00FF5E226
   logicalPath: config/lcc_rgb565_mxt_mzef_cu/peripheral/ebi
   name: plib_ebi.c
@@ -97,13 +97,13 @@ files:
   security: NON_SECURE
   type: SOURCE
   userChecksum: B96764B4811CBC18DB660CC00FF5E226
-- generatedChecksum: 08BE6AC47CB22170CF40BC256A91D220
+- generatedChecksum: 535DCDAB8F821FD98F5A671AF261A069
   logicalPath: config/lcc_rgb565_mxt_mzef_cu/peripheral/evic
   name: plib_evic.c
   physicalPath: peripheral/evic
   security: NON_SECURE
   type: SOURCE
-  userChecksum: 08BE6AC47CB22170CF40BC256A91D220
+  userChecksum: 535DCDAB8F821FD98F5A671AF261A069
 - generatedChecksum: 232AA6C0EADAE0BB16057979B15854AF
   logicalPath: config/lcc_rgb565_mxt_mzef_cu/peripheral/gpio
   name: plib_gpio.c
@@ -118,34 +118,34 @@ files:
   security: NON_SECURE
   type: SOURCE
   userChecksum: 25C1A4C9E922CC3FA821489A42AC7D4D
-- generatedChecksum: 00476FA3C353B9AB067B0EDF1DD27182
+- generatedChecksum: 42F3A1D9D54BCC7C91AA8D6156BAD7D0
   logicalPath: config/lcc_rgb565_mxt_mzef_cu/system/input
   name: sys_input.c
   physicalPath: system/input
   security: NON_SECURE
   type: SOURCE
-  userChecksum: 00476FA3C353B9AB067B0EDF1DD27182
-- generatedChecksum: 99F5C28835CA70CF308C005561EF92C6
+  userChecksum: 42F3A1D9D54BCC7C91AA8D6156BAD7D0
+- generatedChecksum: E2567B999B377C3AB2F46AFB3973AB6C
   logicalPath: config/lcc_rgb565_mxt_mzef_cu/system/input
   name: sys_input_listener.c
   physicalPath: system/input
   security: NON_SECURE
   type: SOURCE
-  userChecksum: 99F5C28835CA70CF308C005561EF92C6
-- generatedChecksum: 640A4B35B8CDB53BD8EA5077D81386BE
+  userChecksum: E2567B999B377C3AB2F46AFB3973AB6C
+- generatedChecksum: C95CE0ABB86E6B11CF77E8891D294510
   logicalPath: config/lcc_rgb565_mxt_mzef_cu/system/int
   name: sys_int.c
   physicalPath: system/int/src
   security: NON_SECURE
   type: SOURCE
-  userChecksum: 640A4B35B8CDB53BD8EA5077D81386BE
-- generatedChecksum: 40A99C84F50EB7DFAA579B8675F140DD
+  userChecksum: C95CE0ABB86E6B11CF77E8891D294510
+- generatedChecksum: 83BDE663A1AAB20C9E52263F22E2ED3C
   logicalPath: config/lcc_rgb565_mxt_mzef_cu/system/time
   name: sys_time.c
   physicalPath: system/time/src
   security: NON_SECURE
   type: SOURCE
-  userChecksum: 40A99C84F50EB7DFAA579B8675F140DD
+  userChecksum: 83BDE663A1AAB20C9E52263F22E2ED3C
 - generatedChecksum: 4977A27A7B12BA411C13123B3817FC96
   logicalPath: config/lcc_rgb565_mxt_mzef_cu
   name: tasks.c
@@ -153,13 +153,13 @@ files:
   security: NON_SECURE
   type: SOURCE
   userChecksum: 4977A27A7B12BA411C13123B3817FC96
-- generatedChecksum: 16BE5CCEE5F9AF5909BF3F69B51C7D93
+- generatedChecksum: 7806B30ECAE0D18D08CD583D8775530D
   logicalPath: config/lcc_rgb565_mxt_mzef_cu/stdio
   name: xc32_monitor.c
   physicalPath: stdio
   security: NON_SECURE
   type: SOURCE
-  userChecksum: 16BE5CCEE5F9AF5909BF3F69B51C7D93
+  userChecksum: 7806B30ECAE0D18D08CD583D8775530D
 - generatedChecksum: null
   logicalPath: ''
   name: app_16.h
@@ -181,20 +181,20 @@ files:
   security: NON_SECURE
   type: HEADER
   userChecksum: 1441BC37D4086511D6D1420DA92053FC
-- generatedChecksum: F347D84870E00BE27BC8E901853B8C00
+- generatedChecksum: CA1EA392AF2540CAC914552D7A9BE4C5
   logicalPath: config/lcc_rgb565_mxt_mzef_cu
   name: definitions.h
   physicalPath: ''
   security: NON_SECURE
   type: HEADER
-  userChecksum: F347D84870E00BE27BC8E901853B8C00
-- generatedChecksum: 5D5C52527AB1435153DB9B50ADE6B79D
+  userChecksum: CA1EA392AF2540CAC914552D7A9BE4C5
+- generatedChecksum: E189C26B2269F8DE46033CCD0621958D
   logicalPath: config/lcc_rgb565_mxt_mzef_cu
   name: device.h
   physicalPath: ''
   security: NON_SECURE
   type: HEADER
-  userChecksum: 5D5C52527AB1435153DB9B50ADE6B79D
+  userChecksum: E189C26B2269F8DE46033CCD0621958D
 - generatedChecksum: 1D2094DFA60F847FFD4E8153B6E78027
   logicalPath: config/lcc_rgb565_mxt_mzef_cu/driver
   name: driver.h
@@ -230,13 +230,20 @@ files:
   security: NON_SECURE
   type: HEADER
   userChecksum: 260EF469FECCFEF9418D6268909EE2F8
-- generatedChecksum: BC1B87C8218F3A54788D9E6D2BAF8D85
+- generatedChecksum: 6D444F08DDDE29A17C364100812E9523
   logicalPath: config/lcc_rgb565_mxt_mzef_cu/gfx/driver/lcc
   name: gfx_driver.h
   physicalPath: gfx/driver
   security: NON_SECURE
   type: HEADER
-  userChecksum: BC1B87C8218F3A54788D9E6D2BAF8D85
+  userChecksum: 6D444F08DDDE29A17C364100812E9523
+- generatedChecksum: 4CF4A86296482D5331331BA301C20BB2
+  logicalPath: config/lcc_rgb565_mxt_mzef_cu
+  name: interrupts.h
+  physicalPath: ''
+  security: NON_SECURE
+  type: HEADER
+  userChecksum: 4CF4A86296482D5331331BA301C20BB2
 - generatedChecksum: F0AD88762263B7CB89B02AB4F5876059
   logicalPath: config/lcc_rgb565_mxt_mzef_cu/osal
   name: osal.h
@@ -251,13 +258,13 @@ files:
   security: NON_SECURE
   type: HEADER
   userChecksum: 0AC88C49E4585B606FD5AC6804F0C340
-- generatedChecksum: B358678B02AC7D3AD6CC80621ECC826D
+- generatedChecksum: B040122CCA94A0636810D6F15F13B751
   logicalPath: config/lcc_rgb565_mxt_mzef_cu/osal
   name: osal_impl_basic.h
   physicalPath: osal
   security: NON_SECURE
   type: HEADER
-  userChecksum: B358678B02AC7D3AD6CC80621ECC826D
+  userChecksum: B040122CCA94A0636810D6F15F13B751
 - generatedChecksum: 7066CC390335CF75126E2A50C46E3BDD
   logicalPath: config/lcc_rgb565_mxt_mzef_cu/peripheral/clk
   name: plib_clk.h
@@ -272,13 +279,13 @@ files:
   security: NON_SECURE
   type: HEADER
   userChecksum: 49EF1C56EBDEE25C8E46F029F020AB21
-- generatedChecksum: 010E7C6872724F56A94D25C46D528ECA
+- generatedChecksum: D4A1E2329C517DB8AB49B9143079554F
   logicalPath: config/lcc_rgb565_mxt_mzef_cu/peripheral/dmac
   name: plib_dmac.h
   physicalPath: peripheral/dmac
   security: NON_SECURE
   type: HEADER
-  userChecksum: 010E7C6872724F56A94D25C46D528ECA
+  userChecksum: D4A1E2329C517DB8AB49B9143079554F
 - generatedChecksum: 2FB4AA3D9381D5DACF95B3338F5A3125
   logicalPath: config/lcc_rgb565_mxt_mzef_cu/peripheral/ebi
   name: plib_ebi.h
@@ -286,13 +293,13 @@ files:
   security: NON_SECURE
   type: HEADER
   userChecksum: 2FB4AA3D9381D5DACF95B3338F5A3125
-- generatedChecksum: B38028A617FDD4D90B80660771629645
+- generatedChecksum: 815CCB981B6CB758464D89480121DC08
   logicalPath: config/lcc_rgb565_mxt_mzef_cu/peripheral/evic
   name: plib_evic.h
   physicalPath: peripheral/evic
   security: NON_SECURE
   type: HEADER
-  userChecksum: B38028A617FDD4D90B80660771629645
+  userChecksum: 815CCB981B6CB758464D89480121DC08
 - generatedChecksum: 34FE94A95C765604BE333862667DDB4B
   logicalPath: config/lcc_rgb565_mxt_mzef_cu/peripheral/gpio
   name: plib_gpio.h
@@ -321,20 +328,20 @@ files:
   security: NON_SECURE
   type: HEADER
   userChecksum: 6972608768DDBE6E37A2D81B83DF490B
-- generatedChecksum: D21A943666F73BB99268A0C55B0327FD
+- generatedChecksum: 533CEADA23BA3DB1FDC642E71682110D
   logicalPath: config/lcc_rgb565_mxt_mzef_cu/system/input
   name: sys_input.h
   physicalPath: system/input
   security: NON_SECURE
   type: HEADER
-  userChecksum: D21A943666F73BB99268A0C55B0327FD
-- generatedChecksum: 5499BE8EDFB7930D2460DE8BA8E8818B
+  userChecksum: 533CEADA23BA3DB1FDC642E71682110D
+- generatedChecksum: 326B45D18D7A6BB4B2D1E0FCF50EF176
   logicalPath: config/lcc_rgb565_mxt_mzef_cu/system/input
   name: sys_input_gesture.h
   physicalPath: system/input
   security: NON_SECURE
   type: HEADER
-  userChecksum: 5499BE8EDFB7930D2460DE8BA8E8818B
+  userChecksum: 326B45D18D7A6BB4B2D1E0FCF50EF176
 - generatedChecksum: A254F5CC3DD63C1432666958260CADAB
   logicalPath: config/lcc_rgb565_mxt_mzef_cu/system/input
   name: sys_input_keyboard.h
@@ -342,13 +349,13 @@ files:
   security: NON_SECURE
   type: HEADER
   userChecksum: A254F5CC3DD63C1432666958260CADAB
-- generatedChecksum: 00AAAE838D855B5A8C560B371C7D0363
+- generatedChecksum: 34162E1DCA132A3EAB3767F529CFD195
   logicalPath: config/lcc_rgb565_mxt_mzef_cu/system/input
   name: sys_input_listener.h
   physicalPath: system/input
   security: NON_SECURE
   type: HEADER
-  userChecksum: 00AAAE838D855B5A8C560B371C7D0363
+  userChecksum: 34162E1DCA132A3EAB3767F529CFD195
 - generatedChecksum: 9B0AB7A5A79745BE5AEC37B9A14D7090
   logicalPath: config/lcc_rgb565_mxt_mzef_cu/system/input
   name: sys_input_mouse.h
@@ -384,13 +391,13 @@ files:
   security: NON_SECURE
   type: HEADER
   userChecksum: 466D676839280C0E7FC2CC6F78BA6EE9
-- generatedChecksum: 82C87C4CF49EE4D859363C15E9073333
+- generatedChecksum: 9463F9BBF69C9593FF3B30F8BC587234
   logicalPath: config/lcc_rgb565_mxt_mzef_cu/system/time
   name: sys_time_definitions.h
   physicalPath: system/time
   security: NON_SECURE
   type: HEADER
-  userChecksum: 82C87C4CF49EE4D859363C15E9073333
+  userChecksum: 9463F9BBF69C9593FF3B30F8BC587234
 - generatedChecksum: 62F39464265EC34979649F761FB4FE57
   logicalPath: config/lcc_rgb565_mxt_mzef_cu/system/time
   name: sys_time_local.h
@@ -433,13 +440,13 @@ files:
   security: NON_SECURE
   type: HEADER
   userChecksum: null
-- generatedChecksum: 9175BBED360A1F5665567266A2A2A4FA
+- generatedChecksum: 07A482DAB7473FC475EA656561967B15
   logicalPath: config/lcc_rgb565_mxt_mzef_cu
   name: p32MZ2048EFM144.ld
   physicalPath: ''
   security: NON_SECURE
   type: LINKER
-  userChecksum: 9175BBED360A1F5665567266A2A2A4FA
+  userChecksum: 07A482DAB7473FC475EA656561967B15
 format_version: v1.0
 libraries: []
 settings:

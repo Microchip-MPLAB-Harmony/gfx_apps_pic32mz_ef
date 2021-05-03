@@ -1,0 +1,86 @@
+{
+	"metaDataVersion": "1.0.0",
+	"category": "com.microchip.ide.project",
+	"content": {
+		"metaDataVersion": "1.1.0",
+		"name": "com.microchip.mcu32.mplabx.project.gfx_apps_pic32mz_ef_legato_quickstart_legato_qs_mzef_cu_tm4301b_90",
+		"version": "3.9.1",
+		"displayName": "Legato Quickstart Example for PIC32MZ EF Family",
+		"projectName": "legato_quickstart_mzef_cu_wqvga_90",
+		"shortDescription": "This application demonstrates a basic graphics application using text, images, and touch input.",
+		"ide": {
+			"name": "MPLABX",
+			"semverRange": ">=5.45.0"
+		},
+		"compiler": [
+			{
+				"name": "XC32",
+				"semverRange": ">=2.50.0"
+			}
+		],
+		"dfp": {
+			"name": "PIC32MZ-EF_DFP",
+			"semverRange": "^1.0.20"
+		},
+		"configurator": {
+			"name": "MHC",
+			"semverRange": ">=3.6.2"
+		},
+		"device": {
+			"metaDataVersion": "1.0.0",
+			"category": "com.microchip.portal.contentRef",
+			"content": {
+				"metaDataVersion": "1.0.0",
+				"category": "com.microchip.device",
+				"name": "PIC32MZ2048EFM144",
+				"versionRange": "*"
+			}
+		},
+		"author": "Microchip",
+		"subcategories": [
+			[
+				"Development Kit", "Curiosity PIC32MZ EF 2.0 Development Board"
+			],
+			[
+				"Harmony", "Middleware", "Graphics", "Legato", "LEGATO_QUICKSTART"
+			],
+			[
+				"Middleware", "Graphics", "Legato", "LEGATO_QUICKSTART"
+			]
+		],
+		"peripherals": [
+			"External Bus Interface",
+            "Touch",
+            "I2C"
+		],
+		"keywords": [
+			"MHC",
+			"Harmony",
+			"Middleware",
+			"Graphics",
+			"PIC32MZ2048EFM144",
+			"PIC32MZ EF Family",
+			"External Bus Interface",
+			"Memory",
+			"Legato",
+            "Touch",
+            "I2C",
+            "WVGA",
+            "Global Palette",
+            "8-LUT",
+            "MaxTouch 5in",
+            "LCC"
+		],
+		"additionalData": {
+			"longDescription": {
+				"metaDataVersion": "1.0.0",
+				"category": "com.microchip.portal.fileRef",
+				"content": {
+					"metaDataVersion": "1.0.0",
+					"fileName": "./../../readme.md",
+					"mimeType": "text/markdown"
+				}
+			}
+		}
+	}
+}

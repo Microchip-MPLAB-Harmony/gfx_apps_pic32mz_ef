@@ -88,6 +88,7 @@
           <itemPath>../src/config/lcc_rgb565_mxt_mzef_cu/device.h</itemPath>
           <itemPath>../src/config/lcc_rgb565_mxt_mzef_cu/user.h</itemPath>
           <itemPath>../src/config/lcc_rgb565_mxt_mzef_cu/configuration.h</itemPath>
+          <itemPath>../src/config/lcc_rgb565_mxt_mzef_cu/interrupts.h</itemPath>
         </logicalFolder>
       </logicalFolder>
       <itemPath>../src/app_16.h</itemPath>

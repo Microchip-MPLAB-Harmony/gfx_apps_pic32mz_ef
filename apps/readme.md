@@ -32,7 +32,7 @@ This application demonstrates how to use the Legato Graphics Library to retrieve
 
 * [Legato Flash](./legato_flash/readme.md)
 
-This application demonstrates how to flash data to internal storage memory using USB or SD Card.  It can also be used as a simple flashing tool for other applications.
+This application demonstrates how to flash data to internal storage memory using USB.  It can also be used as a simple flashing tool for other applications.
 
 ![](./../docs/images/legato_flash.png)
 

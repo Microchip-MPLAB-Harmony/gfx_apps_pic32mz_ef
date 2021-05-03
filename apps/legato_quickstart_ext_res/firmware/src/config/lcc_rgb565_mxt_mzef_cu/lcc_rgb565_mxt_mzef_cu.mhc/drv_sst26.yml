@@ -7,25 +7,10 @@ children:
   - type: Combo
     attributes: {id: CHIP_SELECT}
     children:
-    - type: Attributes
-      children:
-      - type: Boolean
-        attributes: {id: visible}
-        children:
-        - {type: Value, value: 'true'}
     - type: Values
       children:
       - type: User
         attributes: {value: Chip Select 0}
-  - type: Comment
-    attributes: {id: CHIP_SELECT_COMMENT}
-    children:
-    - type: Attributes
-      children:
-      - type: Boolean
-        attributes: {id: visible}
-        children:
-        - {type: Value, value: 'true'}
   - type: File
     attributes: {id: DRV_SST26_HEADER_DEF}
     children:
@@ -38,12 +23,6 @@ children:
   - type: Integer
     attributes: {id: DRV_SST26_NUM_BUFFER_DESC}
     children:
-    - type: Attributes
-      children:
-      - type: Boolean
-        attributes: {id: visible}
-        children:
-        - {type: Value, value: 'true'}
     - type: Values
       children:
       - type: User
@@ -67,16 +46,30 @@ children:
     children:
     - type: Attributes
       children:
-      - type: Boolean
-        attributes: {id: markup}
-        children:
-        - {type: Value, value: 'true'}
       - type: String
         attributes: {id: source}
         children:
         - {type: Value, value: driver/sqi_flash/sst26/src/drv_sst26_sqi.c.ftl}
+  - type: Combo
+    attributes: {id: LANE_MODE}
+    children:
+    - type: Attributes
+      children:
+      - type: Boolean
+        attributes: {id: visible}
+        children:
+        - {type: Value, value: 'true'}
 - type: Attachments
   children:
+  - type: DirectDependency
+    attributes: {id: drv_sst26_SPI_dependency}
+    children:
+    - type: Attributes
+      children:
+      - type: Boolean
+        attributes: {id: enabled}
+        children:
+        - {type: Value, value: 'false'}
   - type: DirectDependency
     attributes: {id: drv_sst26_SQI_dependency}
     children:
