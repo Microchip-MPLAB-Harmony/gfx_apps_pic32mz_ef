@@ -36,6 +36,10 @@
 #include "gfx/legato/string/legato_string.h"
 #include "gfx/legato/widget/legato_widget.h"
 
+#if LE_DEBUG == 1
+#include "gfx/legato/core/legato_debug.h"
+#endif
+
 #define DEFAULT_WIDTH    100
 #define DEFAULT_HEIGHT   23
 
@@ -51,9 +55,9 @@ void _leCheckBoxWidget_GetImageRect(const leCheckBoxWidget* cbox,
 									leRect* imgRect,
 									leRect* imgSrcRect);
 									
-void _leCheckBoxWidget_GetTextRect(const leCheckBoxWidget* cbox,
-								   leRect* textRect,
-								   leRect* drawRect);									
+void _leCheckBoxWidget_GetTextRects(const leCheckBoxWidget* cbox,
+								    leRect* boundingRect,
+								    leRect* kerningRect);
 
 static void invalidateImageRect(const leCheckBoxWidget* _this)
 {
@@ -66,11 +70,11 @@ static void invalidateImageRect(const leCheckBoxWidget* _this)
 
 static void invalidateTextRect(const leCheckBoxWidget* _this)
 {
-    leRect textRect, drawRect;
+    leRect boundingRect, kerningRect;
     
-    _leCheckBoxWidget_GetTextRect(_this, &textRect, &drawRect);
+    _leCheckBoxWidget_GetTextRects(_this, &boundingRect, &kerningRect);
     
-    _this->fn->_damageArea(_this, &drawRect);
+    _this->fn->_damageArea(_this, &boundingRect);
 }
 
 static void invalidateContents(const leCheckBoxWidget* _this)
@@ -194,7 +198,11 @@ static leResult setChecked(leCheckBoxWidget* _this,
     }
 
     _this->fn->invalidate(_this);
-    
+
+#if LE_DEBUG == 1
+    _leDebugNotify_WidgetPropertyChanged((leWidget*)_this);
+#endif
+
     return LE_SUCCESS;
 }
 
@@ -225,16 +233,23 @@ static leResult setString(leCheckBoxWidget* _this,
 
     _this->string = str;
 
-    _this->string->fn->setPreInvalidateCallback((leString*)_this->string,
-                                                (leString_InvalidateCallback)stringPreinvalidate,
-                                                _this);
+    if(_this->string != NULL)
+    {
+        _this->string->fn->setPreInvalidateCallback((leString*) _this->string,
+                                                    (leString_InvalidateCallback) stringPreinvalidate,
+                                                    _this);
 
-    _this->string->fn->setInvalidateCallback((leString*)_this->string,
-                                             (leString_InvalidateCallback)stringInvalidate,
-                                             _this);
+        _this->string->fn->setInvalidateCallback((leString*) _this->string,
+                                                 (leString_InvalidateCallback) stringInvalidate,
+                                                 _this);
+    }
 
     invalidateTextRect(_this);
-        
+
+#if LE_DEBUG == 1
+    _leDebugNotify_WidgetPropertyChanged((leWidget*)_this);
+#endif
+
     return LE_SUCCESS;
 }
 
@@ -253,7 +268,11 @@ static leResult setCheckedImage(leCheckBoxWidget* _this,
     _this->checkedImage = img;
 
     _this->fn->invalidate(_this);
-    
+
+#if LE_DEBUG == 1
+    _leDebugNotify_WidgetPropertyChanged((leWidget*)_this);
+#endif
+
     return LE_SUCCESS;
 }
 
@@ -272,7 +291,11 @@ static leResult setUncheckedImage(leCheckBoxWidget* _this,
     _this->uncheckedImage = img;
 
     _this->fn->invalidate(_this);
-    
+
+#if LE_DEBUG == 1
+    _leDebugNotify_WidgetPropertyChanged((leWidget*)_this);
+#endif
+
     return LE_SUCCESS;
 }
 
@@ -291,7 +314,11 @@ static leResult setImagePosition(leCheckBoxWidget* _this,
     _this->imagePosition = pos;
 
     _this->fn->invalidate(_this);
-    
+
+#if LE_DEBUG == 1
+    _leDebugNotify_WidgetPropertyChanged((leWidget*)_this);
+#endif
+
     return LE_SUCCESS;
 }
 
@@ -310,7 +337,11 @@ static leResult setImageMargin(leCheckBoxWidget* _this,
     _this->imageMargin = mg;
 
     _this->fn->invalidate(_this);
-    
+
+#if LE_DEBUG == 1
+    _leDebugNotify_WidgetPropertyChanged((leWidget*)_this);
+#endif
+
     return LE_SUCCESS;
 }
 
@@ -412,6 +443,7 @@ void _leCheckBoxWidget_GenerateVTable()
     checkBoxWidgetVTable.languageChangeEvent = handleLanguageChangeEvent;
     checkBoxWidgetVTable._paint = _leCheckBoxWidget_Paint;
     checkBoxWidgetVTable.invalidateContents = invalidateContents;
+    checkBoxWidgetVTable._invalidateBorderAreas = invalidateContents;
     checkBoxWidgetVTable.touchDownEvent = handleTouchDownEvent;
     checkBoxWidgetVTable.touchUpEvent = handleTouchUpEvent;
     checkBoxWidgetVTable.touchMoveEvent = handleTouchMovedEvent;
@@ -518,6 +550,7 @@ static const leCheckBoxWidgetVTable checkBoxWidgetVTable =
     .languageChangeEvent = handleLanguageChangeEvent,
     ._paint = _leCheckBoxWidget_Paint,
     .invalidateContents = invalidateContents,
+    ._invalidateBorderAreas = invalidateContents,
     .touchDownEvent = handleTouchDownEvent,
     .touchUpEvent = handleTouchUpEvent,
     .touchMoveEvent = handleTouchMovedEvent,

@@ -159,7 +159,12 @@ static void drawTickLabelWithValue(leBarGraphWidget* graph,
     }
 
     // get the string rectangle
-    leStringUtils_GetRectCStr(paintState.asciibuff, graph->ticksLabelFont, &textRect);
+    leStringUtils_GetRectCStr(paintState.asciibuff,
+                              graph->ticksLabelFont,
+                              &textRect);
+
+    leStringUtils_KerningRect((leRasterFont*)graph->ticksLabelFont,
+                              &textRect);
 
     if (position == LE_RELATIVE_POSITION_LEFTOF)
     {
@@ -702,6 +707,10 @@ static void _calculateCategoryPoints(leBarGraphWidget* graph)
     uint32_t totalSize = paintState.graphRect.width - 4;
     uint32_t catCount = graph->categories.size;
     uint32_t seriesCount = graph->dataSeriesArray.size;
+
+    if(seriesCount == 0)
+        return;
+
     paintState.categoryWidth = totalSize / catCount;
     paintState.barWidth = (paintState.categoryWidth - 2) / seriesCount;
     paintState.stackedWidth = paintState.categoryWidth - 4;
@@ -939,6 +948,9 @@ static void _leBarGraphWidget_GetCategoryTextRect(leBarGraphWidget* graph,
 
     drawRect->x = textRect->x;
     drawRect->y = textRect->y;
+
+    leStringUtils_KerningRect((leRasterFont*)category->str->fn->getFont(category->str),
+                              drawRect);
 }
 
 #if LE_STREAMING_ENABLED == 1
@@ -978,8 +990,8 @@ static void drawString(leBarGraphWidget* graph)
                                                   &drawRect);
 
             category->str->fn->_draw(category->str,
-                                     textRect.x,
-                                     textRect.y,
+                                     drawRect.x,
+                                     drawRect.y,
                                      LE_HALIGN_LEFT,
                                      leScheme_GetRenderColor(graph->widget.scheme, LE_SCHM_TEXT),
                                      paintState.alpha);

@@ -35,6 +35,10 @@
 #include "gfx/legato/common/legato_utils.h"
 #include "gfx/legato/widget/legato_widget.h"
 
+#if LE_DEBUG == 1
+#include "gfx/legato/core/legato_debug.h"
+#endif
+
 #define DEFAULT_WIDTH           100
 #define DEFAULT_HEIGHT          25
 
@@ -44,17 +48,19 @@ const
 #endif
 leLabelWidgetVTable labelWidgetVTable;
 
-void _leLabelWidget_GetTextRect(const leLabelWidget* lbl,
-                                leRect* textRect,
-								leRect* drawRect);
+void _leLabelWidget_GetTextRects(const leLabelWidget* lbl,
+                                 leRect* boundingRect,
+                                 leRect* kerningRect);
 
 static void invalidateContents(const leLabelWidget* lbl)
 {
-    leRect textRect, drawRect;
+    leRect boundingRect, kerningRect;
     
-    _leLabelWidget_GetTextRect(lbl, &textRect, &drawRect);
-    
-    lbl->fn->_damageArea(lbl, &drawRect);
+    _leLabelWidget_GetTextRects(lbl, &boundingRect, &kerningRect);
+
+    leUtils_RectToScreenSpace((leWidget*)lbl, &boundingRect);
+
+    lbl->fn->_damageArea(lbl, &boundingRect);
 }
 
 static void stringPreinvalidate(const leString* str,
@@ -170,7 +176,11 @@ static leResult setString(leLabelWidget* _this,
 	}
 
     invalidateContents(_this);
-        
+
+#if LE_DEBUG == 1
+    _leDebugNotify_WidgetPropertyChanged((leWidget*)_this);
+#endif
+
     return LE_SUCCESS;
 }
 

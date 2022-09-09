@@ -3,4 +3,4 @@ type: UniqueComponent
 attributes: {id: BSP_PIC32MZ_EF_Curiosity_2.0, bsp: 'true'}
 children:
 - type: ElementPosition
-  attributes: {x: '320', y: '20', id: BSP_PIC32MZ_EF_Curiosity_2.0}
+  attributes: {x: '257', y: '8', id: BSP_PIC32MZ_EF_Curiosity_2.0}

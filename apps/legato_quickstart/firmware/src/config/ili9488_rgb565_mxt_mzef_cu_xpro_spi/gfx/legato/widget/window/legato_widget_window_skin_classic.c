@@ -32,6 +32,7 @@
 #include "gfx/legato/core/legato_state.h"
 #include "gfx/legato/renderer/legato_renderer.h"
 #include "gfx/legato/string/legato_string.h"
+#include "gfx/legato/string/legato_stringutils.h"
 #include "gfx/legato/widget/legato_widget.h"
 #include "gfx/legato/widget/legato_widget_skin_classic_common.h"
 
@@ -81,6 +82,7 @@ void _leWindowWidget_GetIconRect(const leWindowWidget* win,
                                  leRect* imgRect,
                                  leRect* imgSrcRect)
 {
+#if 0
     leRect barRect;
     
     imgRect->x = 0;
@@ -108,7 +110,7 @@ void _leWindowWidget_GetIconRect(const leWindowWidget* win,
     
     barRect.y += 2;
     barRect.height -= 4;
-    
+
     leUtils_ArrangeRectangleRelative(imgRect,
                                      leRect_Zero,
                                      barRect,
@@ -123,7 +125,58 @@ void _leWindowWidget_GetIconRect(const leWindowWidget* win,
                                      
     leRectClipAdj(imgRect, &barRect, imgSrcRect, imgRect);
     
-    leUtils_RectToScreenSpace((leWidget*)win, imgRect);                                 
+    leUtils_RectToScreenSpace((leWidget*)win, imgRect);
+#endif
+    leRect textRect = leRect_Zero;
+    leRect bounds;
+    int32_t x, y;
+
+    _leWindowWidget_GetTitleBarRect(win, &bounds);
+
+    //win->fn->localRect(win, &bounds);
+
+    imgRect->x = 0;
+    imgRect->y = 0;
+
+    if(win->title != NULL)
+    {
+        win->title->fn->getRect(win->title, &textRect);
+    }
+
+    //leString_GetMultiLineRect(&win->string, &textRect, -1);
+
+    imgRect->width = win->icon->buffer.size.width;
+    imgRect->height = win->icon->buffer.size.height;
+
+    *imgSrcRect = *imgRect;
+
+    leUtils_ArrangeRectangle(imgRect,
+                             textRect,
+                             bounds,
+                             win->widget.style.halign,
+                             win->widget.style.valign,
+                             LE_RELATIVE_POSITION_LEFTOF,
+                             win->widget.margin.left,
+                             win->widget.margin.top,
+                             win->widget.margin.right,
+                             win->widget.margin.bottom,
+                             win->iconMargin);
+
+    x = imgRect->x;
+    y = imgRect->y;
+
+    imgSrcRect->x += x;
+    imgSrcRect->y += y;
+
+    leRectClip(imgSrcRect, &bounds, imgSrcRect);
+
+    imgSrcRect->x -= x;
+    imgSrcRect->y -= y;
+
+    leRectClip(imgRect, &bounds, imgRect);
+
+    // move the rect to screen space
+    leUtils_RectToScreenSpace((leWidget*)win, imgRect);
 }
 
 void _leWindowWidget_GetTextRect(const leWindowWidget* win,
@@ -164,8 +217,10 @@ void _leWindowWidget_GetTextRect(const leWindowWidget* win,
                                       
     leRectClip(textRect, &barRect, drawRect);
     
-    leUtils_RectToScreenSpace((leWidget*)win, textRect);
-    leUtils_RectToScreenSpace((leWidget*)win, drawRect);                                         
+    leUtils_RectToScreenSpace((leWidget*)win, drawRect);
+
+    leStringUtils_KerningRect((leRasterFont*)win->title->fn->getFont(win->title),
+                              drawRect);
 }
 
 static void drawBackground(leWindowWidget* win);
@@ -324,8 +379,8 @@ static void drawString(leWindowWidget* win)
     _leWindowWidget_GetTextRect(win, &textRect, &drawRect);
     
     win->title->fn->_draw(win->title,
-                          textRect.x,
-                          textRect.y,
+                          drawRect.x,
+                          drawRect.y,
                           win->widget.style.halign,
                           leScheme_GetRenderColor(win->widget.scheme, LE_SCHM_TEXT),
                           paintState.alpha);

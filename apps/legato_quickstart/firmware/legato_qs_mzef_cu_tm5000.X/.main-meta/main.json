@@ -2,9 +2,9 @@
 	"metaDataVersion": "1.0.0",
 	"category": "com.microchip.ide.project",
 	"content": {
-		"metaDataVersion": "1.1.0",
+		"metaDataVersion": "1.3.0",
 		"name": "com.microchip.mcu32.mplabx.project.gfx_apps_pic32mz_ef_legato_quickstart_legato_qs_mzef_cu_tm5000",
-		"version": "3.9.1",
+		"version": "3.10.0",
 		"displayName": "Legato Quickstart Example for PIC32MZ EF Family",
 		"projectName": "legato_quickstart_mzef_cu_wvga",
 		"shortDescription": "This application demonstrates a basic graphics application using text, images, and touch input.",
@@ -37,39 +37,22 @@
 			}
 		},
 		"author": "Microchip",
-		"subcategories": [
-			[
-				"Development Kit", "Curiosity PIC32MZ EF 2.0 Development Board"
-			],
-			[
-				"Harmony", "Middleware", "Graphics", "Legato", "LEGATO_QUICKSTART"
-			],
-			[
-				"Middleware", "Graphics", "Legato", "LEGATO_QUICKSTART"
-			]
-		],
-		"peripherals": [
-			"External Bus Interface",
-            "Touch",
-            "I2C"
-		],
 		"keywords": [
 			"MHC",
+			"MCC",
+			"MIPS",
 			"Harmony",
 			"Middleware",
 			"Graphics",
-			"PIC32MZ2048EFM144",
-			"PIC32MZ EF Family",
-			"External Bus Interface",
 			"Memory",
 			"Legato",
-            "Touch",
-            "I2C",
-            "WVGA",
-            "Global Palette",
-            "8-LUT",
-            "MaxTouch 5in",
-            "LCC"
+			"SRAM",
+            "maXTouch",
+			"Graphics LCD",
+			"LCD",
+			"Display",
+			"Touch",
+            "I2C"
 		],
 		"additionalData": {
 			"longDescription": {

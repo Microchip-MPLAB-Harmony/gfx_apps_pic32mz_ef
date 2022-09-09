@@ -37,6 +37,10 @@
 #include "gfx/legato/string/legato_fixedstring.h"
 #include "gfx/legato/widget/legato_widget.h"
 
+#if LE_DEBUG == 1
+#include "gfx/legato/core/legato_debug.h"
+#endif
+
 
 #define DEFAULT_WIDTH           101
 #define DEFAULT_HEIGHT          101
@@ -123,21 +127,28 @@ static void _recalculateSliceAngles(const lePieChartWidget* _this)
         totalValue += pie->value;
     }
 
+    if(totalValue == 0)
+        return;
+
     // calculate slice percentages
     for(itr = 0; itr < _this->pieArray.size; itr++)
     {
         pie = (lePieChartPie*)_this->pieArray.values[itr];
 
         pie->percentOffset = lastPercent;
-        pie->percentValue = lePercentWholeRounded(pie->value, totalValue);
 
-        lastPercent = pie->percentOffset + pie->percentValue;
-
-        if(itr == _this->pieArray.size - 1)
+        if(pie->value > 0)
         {
-            if(pie->percentOffset + pie->percentValue != 100)
+            pie->percentValue = lePercentWholeRounded(pie->value, totalValue);
+
+            lastPercent = pie->percentOffset + pie->percentValue;
+
+            if(itr == _this->pieArray.size - 1)
             {
-                pie->percentValue = 100 - pie->percentOffset;
+                if(pie->percentOffset + pie->percentValue != 100)
+                {
+                    pie->percentValue = 100 - pie->percentOffset;
+                }
             }
         }
     }
@@ -188,7 +199,11 @@ static leResult setStartAngle(lePieChartWidget* _this,
     _recalculateSliceAngles(_this);
 
     _this->fn->invalidate(_this);
-        
+
+#if LE_DEBUG == 1
+    _leDebugNotify_WidgetPropertyChanged((leWidget*)_this);
+#endif
+
     return LE_SUCCESS;
 }
 
@@ -215,7 +230,11 @@ static leResult setCenterAngle(lePieChartWidget* _this,
     _recalculateSliceAngles(_this);
     
     _this->fn->invalidate(_this);
-        
+
+#if LE_DEBUG == 1
+    _leDebugNotify_WidgetPropertyChanged((leWidget*)_this);
+#endif
+
     return LE_SUCCESS;
 }
 
@@ -245,7 +264,11 @@ static int32_t addEntry(lePieChartWidget* _this)
     _recalculateSliceAngles(_this);
     
     _this->fn->invalidate(_this);
-    
+
+#if LE_DEBUG == 1
+    _leDebugNotify_WidgetPropertyChanged((leWidget*)_this);
+#endif
+
     return _this->pieArray.size - 1;
 }
 
@@ -261,7 +284,11 @@ static leResult clear(lePieChartWidget* _this)
     leArray_Clear(&_this->pieArray);
 
     _this->fn->invalidate(_this);
-        
+
+#if LE_DEBUG == 1
+    _leDebugNotify_WidgetPropertyChanged((leWidget*)_this);
+#endif
+
     return LE_SUCCESS;
 }
 
@@ -301,7 +328,11 @@ static leResult setEntryValue(lePieChartWidget* _this,
     _recalculateSliceAngles(_this);
     
     _this->fn->invalidate(_this);
-        
+
+#if LE_DEBUG == 1
+    _leDebugNotify_WidgetPropertyChanged((leWidget*)_this);
+#endif
+
     return LE_SUCCESS;
 }
 
@@ -339,7 +370,11 @@ static leResult setEntryRadius(lePieChartWidget* _this,
     pie->radius = rad;
     
     _this->fn->invalidate(_this);
-        
+
+#if LE_DEBUG == 1
+    _leDebugNotify_WidgetPropertyChanged((leWidget*)_this);
+#endif
+
     return LE_SUCCESS;
 }
 
@@ -377,7 +412,11 @@ static leResult setEntryOffset(lePieChartWidget* _this,
     pie->offset = offset;
     
     _this->fn->invalidate(_this);
-        
+
+#if LE_DEBUG == 1
+    _leDebugNotify_WidgetPropertyChanged((leWidget*)_this);
+#endif
+
     return LE_SUCCESS;
 }
 
@@ -415,7 +454,11 @@ static leResult setEntryScheme(lePieChartWidget* _this,
     pie->scheme = scheme;
     
     _this->fn->invalidate(_this);
-        
+
+#if LE_DEBUG == 1
+    _leDebugNotify_WidgetPropertyChanged((leWidget*)_this);
+#endif
+
     return LE_SUCCESS;
 }
 
@@ -451,7 +494,11 @@ static leResult setLabelFont(lePieChartWidget* _this,
     _this->labelFont = fnt;
     
     _this->fn->invalidate(_this);
-        
+
+#if LE_DEBUG == 1
+    _leDebugNotify_WidgetPropertyChanged((leWidget*)_this);
+#endif
+
     return LE_SUCCESS;
 }
 
@@ -474,6 +521,10 @@ static leResult setLabelsVisible(lePieChartWidget* _this,
 
     _this->fn->invalidate(_this);
 
+#if LE_DEBUG == 1
+    _leDebugNotify_WidgetPropertyChanged((leWidget*)_this);
+#endif
+
     return LE_SUCCESS;
 }
 
@@ -495,6 +546,10 @@ static leResult setLabelsOffset(lePieChartWidget* _this,
     _this->labelsOffset = offset;
 
     _this->fn->invalidate(_this);
+
+#if LE_DEBUG == 1
+    _leDebugNotify_WidgetPropertyChanged((leWidget*)_this);
+#endif
 
     return LE_SUCCESS;
 }

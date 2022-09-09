@@ -4,9 +4,9 @@
 Defining the Architecture
 -------------------------
 
-![](../../../../docs/images/pic32mz_ef_cu_cpro_ili9488.png)
+![](../../../../docs/images/pic32mz_ef_cu_cpro_ili9488_spi.png)
 
-In this configuration, the application uses the ILI9488 SPI driver setup. After the initialization phase, the application transitions into the paint phase, where it sends pixel data through the ILI9488 driver to the external display controller.
+In this configuration, the application uses the LE External Controller to interface with an ILI9488 based SPI display module. After the initialization phase, the application transitions into the paint phase, where it sends pixel data through the LE External Controller driver to the external display controller (ILI9488) via SPI.
 
 ### Demonstration Features
 
@@ -38,22 +38,33 @@ The following table lists configuration properties:
 Configuring the Hardware
 ------------------------
 
-The final setup should be:
-
 Configure the hardware as follows:
 
--   Connect the 24-bit Passthrough Graphics Adapter to the PIC32MZ EF Curiosity board.
--   Connect the PDA TM4301B display to the 24-bit Passthrough Graphics Adapter using the appropriate ribbon cable.
--   Power up the board by connecting the a micro USB cable to the Debug USB connector on the Curiosity board.
+- Connect a 20-pin FRC cable to J501/EXT1 on the PIC32MZ EF Curiosity board. 
+- Connect the FRC cable to J3 on the maXTouch Curiosity Pro display, making sure Pin 1 on J3 matches Pin 1 on J501.
 
-![](../../../../docs/images/ili9488_rgb565_mxt_mzef_cu_xpro_parallel_cf1.png)
+![](../../../../docs/images/ili9488_rgb565_mxt_mzef_cu_xpro_spi_top.png)
+
+- Set the DIP switch SW1 on the maXTouch Curiosity Pro display to 111 to enable 4-Wire SPI Mode.
+
+![](../../../../docs/images/pic32mzef_cu_cpro_ili.png)
+
+- On older revisions of the board, the LCD backlight pin in not connected on J501. So, Pin 7 on J501/EXT1 should be manually pulled up to 3.3V as shown in the image below.
+
+![](../../../../docs/images/ili9488_rgb565_mxt_mzef_cu_xpro_spi_bot.png)
+
+
+- Few maXTouch Curiosity Pro displays may have missing resistors as shown below. If this is the case, you will need to remove the populated 0 Ohm resistor and populate three 10k 0603 SMD pull-down resistors before swithing IM2 on SW1 to 'On'.
+
+![](../../../../docs/images/mxt_cu_resistor_issue.png)
 
 Running the Demonstration
 -------------------------
 
-Once the board is powered on, the application will run and show the following image on the display panel.
+- Power up the board by connecting the a micro USB cable to the Debug USB connector on the PIC32MZ EF Curiosity board.
+- Once the application is downloaded, it will show the following image on the display panel.
 
-![](../../../../docs/images/legato_quickstart.png)
+![](../../../../docs/images/legato_quickstart_90.png)
 
 * * * * *
 

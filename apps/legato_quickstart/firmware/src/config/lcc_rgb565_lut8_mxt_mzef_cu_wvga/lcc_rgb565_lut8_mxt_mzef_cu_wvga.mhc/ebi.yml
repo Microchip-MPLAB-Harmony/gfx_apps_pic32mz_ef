@@ -141,4 +141,4 @@ children:
         children:
         - {type: Value, value: EBI_CS}
 - type: ElementPosition
-  attributes: {x: '370', y: '240', id: ebi}
+  attributes: {x: '0', y: '524', id: ebi}

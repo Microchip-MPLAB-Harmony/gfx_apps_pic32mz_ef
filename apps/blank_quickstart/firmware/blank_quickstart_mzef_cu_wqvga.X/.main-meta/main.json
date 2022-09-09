@@ -2,9 +2,9 @@
 	"metaDataVersion": "1.0.0",
 	"category": "com.microchip.ide.project",
 	"content": {
-		"metaDataVersion": "1.1.0",
+		"metaDataVersion": "1.3.0",
 		"name": "com.microchip.mcu32.mplabx.project.gfx_apps_pic32mz_ef_blank_quickstart_blank_quickstart_mzef_cu_wqvga",
-		"version": "3.9.1",
+		"version": "3.10.0",
 		"displayName": "Blank Quickstart Example for PIC32MZ EF Family",
 		"projectName": "blank_quickstart_mzef_cu_wqvga",
 		"shortDescription": "This application demonstrates a simple way to create and run a custom graphics application that directly uses the Legato-based controllerless graphics driver.",
@@ -37,32 +37,22 @@
 			}
 		},
 		"author": "Microchip",
-		"subcategories": [
-			[
-				"Development Kit", "Curiosity PIC32MZ EF 2.0 Development Board"
-			],
-			[
-				"Harmony", "Middleware", "Graphics", "Legato", "BLANK_QUICKSTART"
-			],
-			[
-				"Middleware", "Graphics", "Legato", "BLANK_QUICKSTART"
-			]
-		],
-		"peripherals": [
-		    "External Bus Interface"
-		],
 		"keywords": [
 			"MHC",
+			"MCC",
+			"MIPS",
 			"Harmony",
 			"Middleware",
 			"Graphics",
-			"PIC32MZ2048EFM144",
-			"PIC32MZ EF Family",
-			"External Bus Interface",
 			"Memory",
 			"Legato",
-            "MaxTouch 4.3in",
-            "LCC"
+			"SRAM",
+            "maXTouch",
+			"Graphics LCD",
+			"LCD",
+			"Display",
+			"Touch",
+            "I2C"
 		],
 		"additionalData": {
 			"longDescription": {

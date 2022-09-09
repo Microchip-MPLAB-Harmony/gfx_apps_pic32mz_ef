@@ -246,33 +246,10 @@ void event_default_SloganButton_OnReleased(leButtonWidget* btn)
     See prototype in app.h.
  */
 
-static CACHE_ALIGN uint8_t testData[32];
-
 void APP_Initialize ( void )
 {
     /* Place the app state machine in its initial state. */
     appData.state = APP_STATE_INIT;
-    
-    while(DRV_SST26_Status(DRV_SST26_INDEX) != SYS_STATUS_READY)
-    { }
-    
-respin:        
-    appData.handle = DRV_SST26_Open(DRV_SST26_INDEX, DRV_IO_INTENT_READ);
-
-    if (appData.handle == DRV_HANDLE_INVALID)
-    {
-        goto respin;
-    }
-    
-    appData.state = APP_STATE_IDLE;
-    
-    DRV_SST26_Read(appData.handle,
-                   testData,
-                   32,
-                   (uint32_t)0x18D4A0);
-    
-    while(DRV_SST26_TransferStatusGet(appData.handle) != DRV_SST26_TRANSFER_COMPLETED)
-    { }
 }
 
 
@@ -291,6 +268,19 @@ void APP_Tasks ( void )
     switch ( appData.state )
     {
         /* Application's initial state. */
+        case APP_STATE_INIT:
+        {
+            while(DRV_SST26_Status(DRV_SST26_INDEX) != SYS_STATUS_READY){ }
+      
+            appData.handle = DRV_SST26_Open(DRV_SST26_INDEX, DRV_IO_INTENT_READ);
+
+            if (appData.handle != DRV_HANDLE_INVALID)
+            {
+                appData.state = APP_STATE_IDLE;
+            }
+            
+            break;
+        }
         case APP_STATE_READ_WAIT:
         {
 			appData.transferStatus = DRV_SST26_TransferStatusGet(appData.handle);

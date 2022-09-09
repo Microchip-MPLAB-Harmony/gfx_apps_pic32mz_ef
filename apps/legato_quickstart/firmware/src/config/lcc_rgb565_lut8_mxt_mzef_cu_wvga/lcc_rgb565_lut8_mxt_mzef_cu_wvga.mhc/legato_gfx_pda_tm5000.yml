@@ -3,4 +3,4 @@ type: UniqueComponent
 attributes: {id: legato_gfx_pda_tm5000}
 children:
 - type: ElementPosition
-  attributes: {x: '670', y: '240', id: legato_gfx_pda_tm5000}
+  attributes: {x: '294', y: '36', id: legato_gfx_pda_tm5000}

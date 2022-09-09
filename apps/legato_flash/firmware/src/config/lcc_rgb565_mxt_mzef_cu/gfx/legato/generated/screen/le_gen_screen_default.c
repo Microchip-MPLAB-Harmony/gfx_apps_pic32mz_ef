@@ -1,7 +1,7 @@
 #include "gfx/legato/generated/screen/le_gen_screen_default.h"
 
 // screen member widget declarations
-leWidget* root0;
+static leWidget* root0;
 
 leWidget* default_BackgroundPanel;
 leImageWidget* default_WatermarkImage;
@@ -93,7 +93,6 @@ leResult screenShow_default(void)
     default_ErrorMsgPanel = leWidget_New();
     default_ErrorMsgPanel->fn->setPosition(default_ErrorMsgPanel, 67, 151);
     default_ErrorMsgPanel->fn->setSize(default_ErrorMsgPanel, 327, 57);
-    default_ErrorMsgPanel->fn->setVisible(default_ErrorMsgPanel, LE_FALSE);
     default_ErrorMsgPanel->fn->setBackgroundType(default_ErrorMsgPanel, LE_WIDGET_BACKGROUND_NONE);
     default_ErrorMsgPanel->fn->setHAlignment(default_ErrorMsgPanel, LE_HALIGN_RIGHT);
     default_ErrorMsgPanel->fn->setVAlignment(default_ErrorMsgPanel, LE_VALIGN_BOTTOM);
@@ -120,6 +119,7 @@ leResult screenShow_default(void)
     default_USBButton = leButtonWidget_New();
     default_USBButton->fn->setPosition(default_USBButton, 320, 40);
     default_USBButton->fn->setSize(default_USBButton, 120, 120);
+    default_USBButton->fn->setVisible(default_USBButton, LE_FALSE);
     default_USBButton->fn->setScheme(default_USBButton, &defaultScheme);
     default_USBButton->fn->setString(default_USBButton, (leString*)&string_USB);
     default_USBButton->fn->setPressedImage(default_USBButton, (leImage*)&usb_icon_sm);
@@ -230,6 +230,7 @@ leResult screenShow_default(void)
     default_FlashingProgressBar->fn->setScheme(default_FlashingProgressBar, &ProgressScheme);
     default_FlashingProgressBar->fn->setHAlignment(default_FlashingProgressBar, LE_HALIGN_RIGHT);
     default_FlashingProgressBar->fn->setVAlignment(default_FlashingProgressBar, LE_VALIGN_BOTTOM);
+    default_FlashingProgressBar->fn->setValue(default_FlashingProgressBar, 1106);
     default_FlashingPanel->fn->addChild(default_FlashingPanel, (leWidget*)default_FlashingProgressBar);
 
     leAddRootWidget(root0, 0);
@@ -244,6 +245,8 @@ leResult screenShow_default(void)
 
 void screenUpdate_default(void)
 {
+    root0->fn->setSize(root0, root0->rect.width, root0->rect.height);
+
     default_OnUpdate(); // raise event
 }
 

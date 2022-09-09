@@ -243,9 +243,9 @@ leBool leFixedHeap_Contains(leFixedHeap* heap, void* ptr)
 	if(dataPtr < data || dataPtr >= data + (heap->physicalBlockSize * heap->numElements))
 		return LE_FALSE;
 
-	dataPtr -= (uint32_t)data;
+	dataPtr -= (size_t)data;
 	
-	return ((uint32_t)dataPtr % heap->physicalBlockSize) == LE_FIXEDHEAP_HEADER_SIZE;
+	return ((size_t)dataPtr % heap->physicalBlockSize) == LE_FIXEDHEAP_HEADER_SIZE;
 }
 
 leResult leFixedHeap_Validate(struct leFixedHeap* heap)
@@ -293,8 +293,8 @@ leResult leFixedHeap_Validate(struct leFixedHeap* heap)
 void leFixedHeap_Dump(leFixedHeap* heap,
                       leBool dumpRecords)
 {
-    leFixedHeapBlock* blk;
-    uint32_t i;
+    leFixedHeapBlock* blk = NULL;
+    uint32_t i = 0;
 
     blk = heap->data;
     

@@ -2,9 +2,9 @@
 	"metaDataVersion": "1.0.0",
 	"category": "com.microchip.ide.project",
 	"content": {
-		"metaDataVersion": "1.1.0",
+		"metaDataVersion": "1.3.0",
 		"name": "com.microchip.mcu32.mplabx.project.gfx_apps_pic32mz_ef_legato_adventure_legato_adv_mzef_cu_tm4301b",
-		"version": "3.9.1",
+		"version": "3.10.0",
 		"displayName": "Legato Adventure Example for PIC32MZ EF Family",
 		"projectName": "legato_adventure_mzef_cu_wqvga",
 		"shortDescription": "This application demonstrates controllerless graphics and simple sprite animation using the Legato graphics library.",
@@ -37,37 +37,22 @@
 			}
 		},
 		"author": "Microchip",
-		"subcategories": [
-			[
-				"Development Kit", "Curiosity PIC32MZ EF 2.0 Development Board"
-			],
-			[
-				"Harmony", "Middleware", "Graphics", "Legato", "LEGATO_ADVENTURE"
-			],
-			[
-				"Middleware", "Graphics", "Legato", "LEGATO_ADVENTURE"
-			]
-		],
-		"peripherals": [
-			"External Bus Interface",
-            "Touch",
-            "I2C"
-		],
 		"keywords": [
 			"MHC",
+			"MCC",
+			"MIPS",
 			"Harmony",
 			"Middleware",
 			"Graphics",
-			"PIC32MZ2048EFM144",
-			"PIC32MZ EF Family",
-			"External Bus Interface",
 			"Memory",
 			"Legato",
-            "Touch",
-            "I2C",
-            "Animation",
-            "LCC",
-            "MaxTouch 4.3in"
+			"SRAM",
+            "maXTouch",
+			"Graphics LCD",
+			"LCD",
+			"Display",
+			"Touch",
+            "I2C"
 		],
 		"additionalData": {
 			"longDescription": {

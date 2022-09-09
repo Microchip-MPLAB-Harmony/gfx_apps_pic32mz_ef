@@ -78,7 +78,7 @@ static uint32_t internalMemoryRead(void* ptr, uint32_t size, uint32_t n, JPEGDEC
 static uint32_t externalMemoryRead(void* ptr, uint32_t size, uint32_t n, JPEGDECODER* dcd)
 {
     uint32_t count = size * n;
-    uint32_t addr = (uint32_t)dcd->pImageFile->header.address + dcd->fileIndex;
+    uint32_t addr = (size_t)dcd->pImageFile->header.address + dcd->fileIndex;
 
     while(leStream_Read(&dcd->stream, addr, count, ptr, NULL) != LE_SUCCESS)
     { }
@@ -121,6 +121,8 @@ static void blitToFrameBuffer(JPEGDECODER* state,
                                        color,
                                        a);
 #else
+            (void)a; // unused
+
             // write color
             leRenderer_PutPixel_Safe(dest_x + col,
                                      dest_y + row,
@@ -214,7 +216,7 @@ static leResult _draw(const leImage* img,
 
     JPEG_JpegDecoder.blitPtr = blitToFrameBuffer;
     JPEG_JpegDecoder.globalAlpha = a;
-    leRenderer_GetDrawRect(&JPEG_JpegDecoder.clipRect);
+    leRenderer_GetClipRect(&JPEG_JpegDecoder.clipRect);
     JPEG_JpegDecoder.wStartY = 0;
     JPEG_JpegDecoder.wStartX = 0;
     JPEG_JpegDecoder.wDrawWidth = img->buffer.size.width;
@@ -331,7 +333,7 @@ static leResult _render(const leImage* src,
     JPEG_JpegDecoder.imageWriteBuffer = &dst->buffer;
     JPEG_JpegDecoder.readPtr = &internalMemoryRead;
     JPEG_JpegDecoder.blitPtr = blitToImage;
-    leRenderer_GetDrawRect(&JPEG_JpegDecoder.clipRect);
+    leRenderer_GetClipRect(&JPEG_JpegDecoder.clipRect);
     JPEG_JpegDecoder.wStartY = 0;
     JPEG_JpegDecoder.wStartX = 0;
     JPEG_JpegDecoder.wDrawWidth = src->buffer.size.width;

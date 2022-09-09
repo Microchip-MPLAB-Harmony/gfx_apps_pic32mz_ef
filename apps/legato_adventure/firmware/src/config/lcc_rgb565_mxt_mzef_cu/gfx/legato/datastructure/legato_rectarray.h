@@ -52,6 +52,10 @@
 
 #include "gfx/legato/common/legato_common.h"
 
+#ifdef __cplusplus
+extern "C" {
+#endif
+
 // *****************************************************************************
 /* Structure:
     leRectArray
@@ -338,7 +342,6 @@ leResult leRectArray_MergeSimilar(leRectArray* arr);
 leResult leRectArray_RemoveOverlapping(leRectArray* arr);
 
 #if LE_SCRATCH_BUFFER_PADDING == 1
-// *****************************************************************************
 /**
  * @brief Pad existing rectangles
  * @details Analyzes and splits rectangles in order to conform them to a defined
@@ -351,6 +354,36 @@ leResult leRectArray_RemoveOverlapping(leRectArray* arr);
  * @returns LE_SUCCESS if set, otherwise LE_FAILURE.
  */
 leResult leRectArray_PadRectangles(leRectArray* arr);
+
+/**
+ * @brief Pad existing rectangles
+ * @details Analyzes and splits rectangles by width in order to conform them to a defined
+ * padding strategy.
+ * @code
+ * leRectArray* arr;
+ * leRectArray_PadRectangles(arr)
+ * @endcode
+ * @param arr the array to modify.
+ * @param size the padding size
+ * @returns LE_SUCCESS if set, otherwise LE_FAILURE.
+ */
+leResult leRectArray_PadRectangleWidth(leRectArray* arr,
+                                       uint32_t size);
+
+/**
+ * @brief Pad existing rectangles
+ * @details Analyzes and splits rectangles by height in order to conform them to a defined
+ * padding strategy.
+ * @code
+ * leRectArray* arr;
+ * leRectArray_PadRectangles(arr)
+ * @endcode
+ * @param arr the array to modify.
+ * @param size the padding size
+ * @returns LE_SUCCESS if set, otherwise LE_FAILURE.
+ */
+leResult leRectArray_PadRectangleHeight(leRectArray* arr,
+                                        uint32_t size);
 #endif
 
 // *****************************************************************************
@@ -412,5 +445,9 @@ leResult leRectArray_CropToSizeY(leRectArray* arr, uint32_t size);
  * @returns LE_SUCCESS , otherwise LE_FAILURE.
  */
 leResult leRectArray_CropToSizeX(leRectArray* arr, uint32_t size);
+
+#ifdef __cplusplus
+}
+#endif
 
 #endif /* LEGATO_RECTARRAY_H */

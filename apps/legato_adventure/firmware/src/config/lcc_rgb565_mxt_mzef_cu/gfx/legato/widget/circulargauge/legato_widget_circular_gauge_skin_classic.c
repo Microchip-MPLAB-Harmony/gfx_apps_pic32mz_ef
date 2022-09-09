@@ -250,6 +250,9 @@ static void _paintLabelValueAtAngle(int32_t angle,
 
     paintState.labelStr.fn->getRect(&paintState.labelStr, &stringRect);
 
+    leStringUtils_KerningRect((leRasterFont*)fnt,
+                              &stringRect);
+
     stringRect.x = paintState.gaugeOrigin.x + lblPoint.x - stringRect.width / 2;
     stringRect.y = paintState.gaugeOrigin.y + (-lblPoint.y) - stringRect.height / 2;
 
@@ -380,6 +383,7 @@ static void paintHand(const leCircularGaugeWidget* gauge)
     lePoint startPt, endPt;
     int32_t handLength;
     int32_t angle;
+    uint32_t circleRadius;
 
     if(gauge->handVisible == LE_FALSE)
         return;
@@ -391,12 +395,17 @@ static void paintHand(const leCircularGaugeWidget* gauge)
     {
         startPt.x = 0;
         startPt.y = 0;
+
+        lePolarToXY(0, angle, &startPt);
     }
     else
     {
-        lePolarToXY(gauge->centerCircleRadius - 2, angle, &startPt);
-        lePolarToXY(handLength, angle, &endPt);
+        circleRadius = lePercentOf(gauge->radius, gauge->centerCircleRadius);
+
+        lePolarToXY(circleRadius, angle, &startPt);
     }
+
+    lePolarToXY(handLength, angle, &endPt);
 
     leRenderer_DrawLine(paintState.gaugeOrigin.x + startPt.x,
                         paintState.gaugeOrigin.y - startPt.y,

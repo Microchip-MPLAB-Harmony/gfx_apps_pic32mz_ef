@@ -40,7 +40,6 @@
 
 
 
-
 #include "gfx/driver/controller/lcc/drv_gfx_lcc.h"
 #include "definitions.h"
 
@@ -122,7 +121,7 @@ uint32_t DISP_HOR_PULSE_WIDTH = 48;
 uint32_t DISP_VER_FRONT_PORCH = 13;
 uint32_t DISP_VER_RESOLUTION = DISPLAY_HEIGHT;
 uint32_t DISP_VER_BACK_PORCH = 29;
-uint32_t DISP_VER_PULSE_WIDTH = 10;
+uint32_t DISP_VER_PULSE_WIDTH = 3;
 
 int16_t line = 0;
 uint32_t offset = 0;

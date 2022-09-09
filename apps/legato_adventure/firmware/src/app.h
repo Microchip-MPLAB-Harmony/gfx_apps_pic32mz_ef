@@ -62,8 +62,8 @@ typedef enum
 {
     /* Application's state machine's initial state. */
     APP_STATE_INIT=0,
-    APP_STATE_SPLASH,
-    APP_STATE_MAIN,
+    APP_STATE_SERVICE_TASKS,
+    /* TODO: Define states used by the application state machine. */
 
 } APP_STATES;
 
@@ -170,15 +170,13 @@ void APP_Initialize ( void );
 
 void APP_Tasks( void );
 
-
-
-#endif /* _APP_H */
-
 //DOM-IGNORE-BEGIN
 #ifdef __cplusplus
 }
 #endif
 //DOM-IGNORE-END
+
+#endif /* _APP_H */
 
 /*******************************************************************************
  End of File

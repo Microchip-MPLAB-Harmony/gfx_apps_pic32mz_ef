@@ -44,6 +44,10 @@
 #include "gfx/legato/string/legato_stringutils.h"
 #include "gfx/legato/widget/legato_widget.h"
 
+#if LE_DEBUG == 1
+#include "gfx/legato/core/legato_debug.h"
+#endif
+
 #define DEFAULT_WIDTH           101
 #define DEFAULT_HEIGHT          101
 
@@ -195,6 +199,9 @@ static void getValueLabelMaxDrawRect(const leBarGraphWidget* _this,
             leStringUtils_GetRectCStr(strbuff,
                                       _this->ticksLabelFont,
                                       &minLabelRect);
+
+            leStringUtils_KerningRect((leRasterFont*)_this->ticksLabelFont,
+                                      &minLabelRect);
         }
 
         //Protect from overflow
@@ -211,11 +218,14 @@ static void getValueLabelMaxDrawRect(const leBarGraphWidget* _this,
                                   _this->ticksLabelFont,
                                   &maxLabelRect);
 
+        leStringUtils_KerningRect((leRasterFont*)_this->ticksLabelFont,
+                                  &maxLabelRect);
+
         rect->width = (maxLabelRect.width > minLabelRect.width) ?
                       (maxLabelRect.width) :
                       (minLabelRect.width);
 
-        rect->height = (maxLabelRect.height > minLabelRect.height) ? 
+        rect->height = (maxLabelRect.height > minLabelRect.height) ?
                        (maxLabelRect.height) :
                        (minLabelRect.height);
     }
@@ -375,6 +385,10 @@ static leResult setTickLength(leBarGraphWidget* _this,
     _this->tickLength = length;
     
     _this->fn->invalidate(_this);
+
+#if LE_DEBUG == 1
+    _leDebugNotify_WidgetPropertyChanged((leWidget*)_this);
+#endif
         
     return LE_SUCCESS;
 }
@@ -397,7 +411,11 @@ static leResult setFillGraphArea(leBarGraphWidget* _this,
     _this->fillGraphArea = fill;
     
     _this->fn->invalidate(_this);
-        
+
+#if LE_DEBUG == 1
+    _leDebugNotify_WidgetPropertyChanged((leWidget*)_this);
+#endif
+
     return LE_SUCCESS;
 }
 
@@ -425,7 +443,11 @@ static leResult setGridLinesVisible(leBarGraphWidget* _this,
     _this->valueGridLinesVisible = vis;
     
     _this->fn->invalidate(_this);
-        
+
+#if LE_DEBUG == 1
+    _leDebugNotify_WidgetPropertyChanged((leWidget*)_this);
+#endif
+
     return LE_SUCCESS;
 }
 
@@ -447,7 +469,11 @@ static leResult setStacked(leBarGraphWidget* _this,
     _this->stacked = stacked;
     
     _this->fn->invalidate(_this);
-        
+
+#if LE_DEBUG == 1
+    _leDebugNotify_WidgetPropertyChanged((leWidget*)_this);
+#endif
+
     return LE_SUCCESS;
 }
 
@@ -478,7 +504,11 @@ static leResult setMaxValue(leBarGraphWidget* _this,
     _this->maxValue = value;
     
     _this->fn->invalidate(_this);
-        
+
+#if LE_DEBUG == 1
+    _leDebugNotify_WidgetPropertyChanged((leWidget*)_this);
+#endif
+
     return LE_SUCCESS;
 }
 
@@ -509,7 +539,11 @@ static leResult setMinValue(leBarGraphWidget* _this,
     _this->minValue = value;
     
     _this->fn->invalidate(_this);
-        
+
+#if LE_DEBUG == 1
+    _leDebugNotify_WidgetPropertyChanged((leWidget*)_this);
+#endif
+
     return LE_SUCCESS;
 }
 
@@ -537,7 +571,11 @@ static leResult setValueAxisLabelsVisible(leBarGraphWidget* _this,
     _this->valueAxisLabelsVisible = vis;
     
     _this->fn->invalidate(_this);
-        
+
+#if LE_DEBUG == 1
+    _leDebugNotify_WidgetPropertyChanged((leWidget*)_this);
+#endif
+
     return LE_SUCCESS;
 }
 
@@ -565,7 +603,11 @@ static leResult setValueAxisTicksVisible(leBarGraphWidget* _this,
     _this->valueAxisTicksVisible = vis;
     
     _this->fn->invalidate(_this);
-        
+
+#if LE_DEBUG == 1
+    _leDebugNotify_WidgetPropertyChanged((leWidget*)_this);
+#endif
+
     return LE_SUCCESS;
 }
 
@@ -593,7 +635,11 @@ static leResult setValueAxisTicksInterval(leBarGraphWidget* _this,
     _this->tickInterval = itv;
     
     _this->fn->invalidate(_this);
-        
+
+#if LE_DEBUG == 1
+    _leDebugNotify_WidgetPropertyChanged((leWidget*)_this);
+#endif
+
     return LE_SUCCESS;
 }
 
@@ -622,7 +668,11 @@ static leResult setValueAxisTicksPosition(leBarGraphWidget* _this,
     _this->valueAxisTicksPosition = pos;
     
     _this->fn->invalidate(_this);
-        
+
+#if LE_DEBUG == 1
+    _leDebugNotify_WidgetPropertyChanged((leWidget*)_this);
+#endif
+
     return LE_SUCCESS; 
 }
 
@@ -650,7 +700,11 @@ static leResult setValueAxisSubticksVisible(leBarGraphWidget* _this,
     _this->valueAxisSubticksVisible = vis;
     
     _this->fn->invalidate(_this);
-        
+
+#if LE_DEBUG == 1
+    _leDebugNotify_WidgetPropertyChanged((leWidget*)_this);
+#endif
+
     return LE_SUCCESS;
 }
 
@@ -678,7 +732,11 @@ static leResult setValueAxisSubticksInterval(leBarGraphWidget* _this,
     _this->subtickInterval = itv;
     
     _this->fn->invalidate(_this);
-        
+
+#if LE_DEBUG == 1
+    _leDebugNotify_WidgetPropertyChanged((leWidget*)_this);
+#endif
+
     return LE_SUCCESS;
 }
 
@@ -706,7 +764,11 @@ static leResult setValueAxisSubticksPosition(leBarGraphWidget* _this,
     _this->valueAxisSubticksPosition = pos;
     
     _this->fn->invalidate(_this);
-        
+
+#if LE_DEBUG == 1
+    _leDebugNotify_WidgetPropertyChanged((leWidget*)_this);
+#endif
+
     return LE_SUCCESS;     
 }
 
@@ -728,7 +790,11 @@ static leResult setCategoryAxisTicksVisible(leBarGraphWidget* _this,
     _this->categAxisTicksVisible = vis;
     
     _this->fn->invalidate(_this);
-        
+
+#if LE_DEBUG == 1
+    _leDebugNotify_WidgetPropertyChanged((leWidget*)_this);
+#endif
+
     return LE_SUCCESS;
 }
 
@@ -750,7 +816,11 @@ static leResult setCategoryAxisTicksPosition(leBarGraphWidget* _this,
     _this->categAxisTicksPosition = pos;
     
     _this->fn->invalidate(_this);
-        
+
+#if LE_DEBUG == 1
+    _leDebugNotify_WidgetPropertyChanged((leWidget*)_this);
+#endif
+
     return LE_SUCCESS;      
 }
 
@@ -772,7 +842,11 @@ static leResult setCategoryAxisLabelsVisible(leBarGraphWidget* _this,
     _this->categAxisLabelsVisible = vis;
     
     _this->fn->invalidate(_this);
-        
+
+#if LE_DEBUG == 1
+    _leDebugNotify_WidgetPropertyChanged((leWidget*)_this);
+#endif
+
     return LE_SUCCESS;
 }
 
@@ -791,7 +865,11 @@ static leResult setTicksLabelFont(leBarGraphWidget* _this,
     _this->ticksLabelFont = font;
     
     _this->fn->invalidate(_this);
-        
+
+#if LE_DEBUG == 1
+    _leDebugNotify_WidgetPropertyChanged((leWidget*)_this);
+#endif
+
     return LE_SUCCESS;
 }
 
@@ -811,16 +889,20 @@ static leResult addSeries(leBarGraphWidget* _this,
     
     series->axis = BAR_GRAPH_AXIS_0;
     series->scheme = leGetDefaultScheme();
-    
-    leArray_PushBack(&_this->dataSeriesArray, series);
-    
+
     if(seriesID != NULL)
     {
         *seriesID = _this->dataSeriesArray.size;
     }
-    
+
+    leArray_PushBack(&_this->dataSeriesArray, series);
+
     _this->fn->invalidate(_this);
-    
+
+#if LE_DEBUG == 1
+    _leDebugNotify_WidgetPropertyChanged((leWidget*)_this);
+#endif
+
     return LE_SUCCESS;
 }
 
@@ -848,16 +930,20 @@ static leResult addDataToSeries(leBarGraphWidget* _this,
         return LE_FAILURE;
     
     *data = value;
-    
-    leArray_PushBack(&series->data, (void*)data);
 
     if(index != NULL)
     {
-       *index = series->data.size - 1;
+        *index = series->data.size - 1;
     }
-    
+
+    leArray_PushBack(&series->data, (void*)data);
+
     _this->fn->invalidate(_this);
-    
+
+#if LE_DEBUG == 1
+    _leDebugNotify_WidgetPropertyChanged((leWidget*)_this);
+#endif
+
     return LE_SUCCESS;
 }
 
@@ -900,7 +986,11 @@ static leResult setDataInSeries(leBarGraphWidget* _this,
 
 
     _leWidget_DamageArea((leWidget*)_this, &damagedRect);
-    
+
+#if LE_DEBUG == 1
+    _leDebugNotify_WidgetPropertyChanged((leWidget*)_this);
+#endif
+
     return LE_SUCCESS;
 }
 
@@ -944,7 +1034,11 @@ static leResult setSeriesScheme(leBarGraphWidget* _this,
     series->scheme = scheme;
     
     _this->fn->invalidate(_this);
-        
+
+#if LE_DEBUG == 1
+    _leDebugNotify_WidgetPropertyChanged((leWidget*)_this);
+#endif
+
     return LE_SUCCESS;
 }
 
@@ -963,15 +1057,19 @@ static leResult addCategory(leBarGraphWidget* _this,
     cat->str = NULL;
     cat->drawX = 0;
 
-    leArray_PushBack(&_this->categories, cat);
-
     if(id != NULL)
     {
         *id = _this->categories.size;
     }
-    
+
+    leArray_PushBack(&_this->categories, cat);
+
     _this->fn->invalidate(_this);
-    
+
+#if LE_DEBUG == 1
+    _leDebugNotify_WidgetPropertyChanged((leWidget*)_this);
+#endif
+
     return LE_SUCCESS;
 }
 
@@ -1009,7 +1107,11 @@ static leResult setCategoryString(leBarGraphWidget* _this,
     cat->str = str;
     
     _this->fn->invalidate(_this);
-    
+
+#if LE_DEBUG == 1
+    _leDebugNotify_WidgetPropertyChanged((leWidget*)_this);
+#endif
+
     return LE_SUCCESS;
 }
 
@@ -1053,7 +1155,11 @@ static leResult clearData(leBarGraphWidget* _this)
     leArray_Clear(&_this->dataSeriesArray);
     
     _this->fn->invalidate(_this);
-    
+
+#if LE_DEBUG == 1
+    _leDebugNotify_WidgetPropertyChanged((leWidget*)_this);
+#endif
+
     return LE_SUCCESS;
 }
 

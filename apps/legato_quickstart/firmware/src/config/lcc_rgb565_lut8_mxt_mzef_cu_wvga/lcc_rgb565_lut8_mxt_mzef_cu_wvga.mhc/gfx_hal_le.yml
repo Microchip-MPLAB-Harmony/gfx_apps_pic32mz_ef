@@ -80,7 +80,7 @@ children:
     - type: Values
       children:
       - type: Dynamic
-        attributes: {id: le_gfx_driver_lcc, value: '10'}
+        attributes: {id: le_gfx_driver_lcc, value: '3'}
   - type: Integer
     attributes: {id: DisplayWidth}
     children:
@@ -124,4 +124,4 @@ children:
       - type: Dynamic
         attributes: {id: le_gfx_driver_lcc, value: le_gfx_driver_lcc}
 - type: ElementPosition
-  attributes: {x: '450', y: '100', id: gfx_hal_le}
+  attributes: {x: '153', y: '36', id: gfx_hal_le}

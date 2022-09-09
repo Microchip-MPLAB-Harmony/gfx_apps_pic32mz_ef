@@ -31,6 +31,7 @@ void legato_updateScreenState(void);
 // do not do anything in the application if this returns true
 leBool legato_isChangingScreens(void);
 
+
 //DOM-IGNORE-BEGIN
 
 #ifdef __cplusplus

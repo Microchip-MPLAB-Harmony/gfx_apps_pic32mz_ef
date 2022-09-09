@@ -225,7 +225,7 @@ void Screen0_OnUpdate()
     {
         case SCREEN_SETUP:
         {
-            if(leGetRenderState()->frameState == LE_FRAME_READY &&
+            if(leRenderer_IsIdle() &&
                leEvent_GetCount() == 0)
             {
                 setup();
@@ -235,7 +235,7 @@ void Screen0_OnUpdate()
         }
         case SCREEN_MOVE_BAR:
         {
-            if(leGetRenderState()->frameState == LE_FRAME_READY &&
+            if(leRenderer_IsIdle() &&
                leEvent_GetCount() == 0)
             {            
                 moveBar();
@@ -245,7 +245,7 @@ void Screen0_OnUpdate()
         }
         case SCREEN_SWAP_LOGO_ALPHA:
         {
-            if(leGetRenderState()->frameState == LE_FRAME_READY &&
+            if(leRenderer_IsIdle() &&
                leEvent_GetCount() == 0)
             {            
                 swapLogoAlpha();
@@ -255,7 +255,7 @@ void Screen0_OnUpdate()
         }
         case SCREEN_SHOW_SMALL_ICON:
         {
-            if(leGetRenderState()->frameState == LE_FRAME_READY &&
+            if(leRenderer_IsIdle() &&
                leEvent_GetCount() == 0)
             {            
                 showSmallIcon();
@@ -271,7 +271,7 @@ void Screen0_OnUpdate()
         }
         case SCREEN_WAIT_FOR_NEXT:
         {
-            if(leGetRenderState()->frameState == LE_FRAME_READY &&
+            if(leRenderer_IsIdle() &&
                leEvent_GetCount() == 0)
             {
                 screenState = SCREEN_MOVE_TO_NEXT;

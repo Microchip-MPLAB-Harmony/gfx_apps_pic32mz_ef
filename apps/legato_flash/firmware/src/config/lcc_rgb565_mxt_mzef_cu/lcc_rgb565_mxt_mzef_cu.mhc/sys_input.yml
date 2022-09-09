@@ -12,4 +12,4 @@ children:
       - type: Dynamic
         attributes: {id: sys_input, value: 'false'}
 - type: ElementPosition
-  attributes: {x: '709', y: '192', id: sys_input}
+  attributes: {x: '546', y: '202', id: sys_input}

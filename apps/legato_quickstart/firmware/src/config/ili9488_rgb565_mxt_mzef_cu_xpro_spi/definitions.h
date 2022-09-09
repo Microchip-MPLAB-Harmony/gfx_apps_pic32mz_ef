@@ -48,8 +48,8 @@
 #include <stdint.h>
 #include <stddef.h>
 #include <stdbool.h>
-#include "gfx/legato/generated/le_gen_harmony.h"
 #include "peripheral/spi/spi_master/plib_spi3_master.h"
+#include "gfx/legato/generated/le_gen_harmony.h"
 #include "peripheral/clk/plib_clk.h"
 #include "peripheral/gpio/plib_gpio.h"
 #include "peripheral/evic/plib_evic.h"

@@ -37,10 +37,10 @@ The following applications are provided to demonstrate a subset of the capabilit
 
 | Category | Item | Description | Release Type |
 | --- | --- | ---- |---- |
-|  apps | [legato_adventure](./apps/legato_adventure/readme.md) | Parallax and sprite animation example | ![app-beta](https://img.shields.io/badge/application-beta-orange?style=plastic) |
-|  apps   | [legato_flash](./docs/legato/html/LegatoFlash.html) |  Flash writer example | ![app-beta](https://img.shields.io/badge/application-beta-orange?style=plastic) |
-|   apps  | [legato_quickstart](./apps/legato_quickstart/readme.md) | Legato UI library quickstart example | ![app-beta](https://img.shields.io/badge/application-beta-orange?style=plastic) |
-|  apps   | [legato_quickstart_ext_res](./apps/legato_quickstart_ext_res/readme.md) | Legato UI library external resource example | ![app-beta](https://img.shields.io/badge/application-beta-orange?style=plastic)|
+|  apps | [legato_adventure](./apps/legato_adventure/readme.md) | Parallax and sprite animation example | ![app-beta](https://img.shields.io/badge/application-production-green?style=plastic) |
+|  apps   | [legato_flash](./docs/legato/html/LegatoFlash.html) |  Flash writer example | ![app-beta](https://img.shields.io/badge/application-production-green?style=plastic) |
+|   apps  | [legato_quickstart](./apps/legato_quickstart/readme.md) | Legato UI library quickstart example | ![app-beta](https://img.shields.io/badge/application-production-green?style=plastic) |
+|  apps   | [legato_quickstart_ext_res](./apps/legato_quickstart_ext_res/readme.md) | Legato UI library external resource example | ![app-beta](https://img.shields.io/badge/application-production-green?style=plastic)|
 |     
 
 ## Graphics application examples (Blank)
@@ -49,7 +49,7 @@ The following applications are provided to demonstrate the ability for the Harmo
 
 | Category | Item | Description | Release Type |
 | --- | --- | ---- |---- |
-| apps | [blank_quickstart](./apps/blank_quickstart/readme.md) | Blank UI-less library quickstart example | ![app-beta](https://img.shields.io/badge/application-beta-orange?style=plastic) |
+| apps | [blank_quickstart](./apps/blank_quickstart/readme.md) | Blank UI-less library quickstart example | ![app-beta](https://img.shields.io/badge/application-production-green?style=plastic) |
 
 ____
 

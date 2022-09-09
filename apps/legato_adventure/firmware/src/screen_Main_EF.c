@@ -110,7 +110,7 @@ static void MainScreen_HandleLocomotion(uintptr_t context)
         return;
     }
 
-    if(leGetRenderState()->frameState == LE_FRAME_READY &&
+    if(leRenderer_IsIdle() &&
        leEvent_GetCount() == 0)
     {
         if (spriteFacing == FACE_RIGHT)
@@ -138,7 +138,7 @@ static void MainScreen_HandleAnimation(uintptr_t context)
     uint32_t offset = Screen1_PositionWidget->fn->getWidth(Screen1_PositionWidget) / 2;
     uint32_t Screen1_leftButtonWidth = Screen1_ButtonWidget_RunLeft->fn->getWidth(Screen1_ButtonWidget_RunLeft);
     
-    if(leGetRenderState()->frameState == LE_FRAME_READY)
+    if(leRenderer_IsIdle())
     {
         Screen1_PositionWidget->fn->setX(Screen1_PositionWidget, spritePosX);
         Screen1_ButtonWidget_RunLeft->fn->setX(Screen1_ButtonWidget_RunLeft, spritePosX + offset - Screen1_leftButtonWidth);
@@ -278,7 +278,7 @@ void Screen1_OnUpdate()
     {
         case SCREEN_INIT:
         {
-            if(leGetRenderState()->frameState == LE_FRAME_READY &&
+            if(leRenderer_IsIdle() &&
                leEvent_GetCount() == 0)
             {
                 spritePosX = Screen1_PositionWidget->fn->getX(Screen1_PositionWidget);
